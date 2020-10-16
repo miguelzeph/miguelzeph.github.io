@@ -36,8 +36,8 @@
 }
 
 .titulosBrancos {
-  text-decoration:underline;
-  text-underline-position: below;
+  /*text-decoration:underline;*/
+  /*text-underline-position: below;*/
   padding-bottom:20px;
   text-transform: uppercase;
   font-weight: 700;
@@ -45,8 +45,8 @@
 }
 
 .titulosRoxos {
-  text-decoration:underline;
-  text-underline-position: below;
+  /*text-decoration:underline;*/
+  /*text-underline-position: below;*/
   padding-bottom:20px;
   text-transform: uppercase;
   font-weight: 700;
@@ -57,8 +57,13 @@
   color:white !important;
 }
 
+.textosPretos {
+  color:black !important;
+}
+
 .jumbotron {
   margin-bottom: 0px;
+  padding:15px;
 }
 
 html {
@@ -79,4 +84,9 @@ a {
   background-color: transparent;
   text-decoration: none;
   font-size:14px;
+}
+a:hover {
+  color: rgb(139, 139, 139);
+  background-color: transparent;
+  text-decoration: underline;
 }
