@@ -15,6 +15,8 @@
 
 **LinkedIn:** [Miguel Amaral](https://www.linkedin.com/in/miguel-amaral-56a11610a/)
 
+**GitHub:**[MiguelZeph](https://github.com/miguelzeph)
+
 ---
 
 Feel free to reach out to me through any of the contact methods listed above.
