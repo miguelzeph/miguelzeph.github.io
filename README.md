@@ -51,12 +51,6 @@ pip install mkdocs
 Build the Documentation
 ```
 
-Build the documentation using the MkDocs command:
-
-```bash
-mkdocs build
-```
-
 Serve the Documentation Locally
 
 To view the documentation in your browser, run:
@@ -71,10 +65,36 @@ Open http://localhost:8000 in your web browser to explore the documentation.
 ### Publishing on GitHub Pages
 To publish your documentation on GitHub Pages, follow these steps:
 
-Run the following command:
+1. Make sure you are working on **master** branch
+
+2. Build the documentation using the MkDocs command:
+
+```bash
+mkdocs build
+```
+
+3. Run the following command:
 
 ```bash
 mkdocs gh-deploy
 ```
 
+4. `Add` & `commit` & `push` the changes in the **master** branch
+
+5. Go to branch **gh-pages** that was created by the comand **gh-deploy**
+```bash
+git checkout gh-pages
+```
+
+6. Push the changes to **gh-pages**
+P.S. This command you just need to do the first time you used the `mkdocs gh-deploy` because it will create the branch **gh-pages** locally and you need just to push it the first time to create the branch remotally.
+```bash
+git push origin gh-pages
+```
+
+7. Go to github -> Settings -> Pages: Change exchange the branch **master** per **gh-pages**
+
+
 Your documentation will be deployed to the gh-pages branch and available via GitHub Pages.
+
+P.S. So now you will make the changes in the **master** branch and when you want to update your github page you just need to use the command **mkdocs gh-deploy** and your page will be updated automatically.
