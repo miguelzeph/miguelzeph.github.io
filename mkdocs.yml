@@ -1,4 +1,5 @@
 site_name: MiguelDevSpace
+repo_url: https://github.com/miguelzeph/miguelzeph.github.io
 site_url: https://miguelzeph.github.io
 theme:
   name: dracula # material
