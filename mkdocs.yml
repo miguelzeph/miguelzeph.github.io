@@ -1,0 +1,38 @@
+site_name: MiguelDevSpace
+site_url: https://miguelzeph.github.io
+theme:
+  name: dracula # material
+  palette:
+    primary: 'teal'
+    accent: 'orange'
+  font:
+    text: 'Lato'
+    code: 'Fira Code'
+  logo: 'about/img/profile.png'
+  favicon: 'img/favicon.ico'
+
+nav:
+  - Home: index.md
+  - "👤 About Me": about/about.md
+  - "📚 Skills": "skills/skills.md"
+  - "💼 Projects":
+      - "Project 1": projects/project_1.md
+  - "🛠️ Services":
+      - "Service 1": services/service_1.md
+      - "Service 2": services/service_2.md
+  - "🔬 Scientific Articles": scientific_articles/scientific_articles.md
+  - "📞 Contact": contact.md
+
+
+plugins:
+  - search
+  # - awesome-pages
+  # - markdownextradata
+
+extra_css:
+  - css/custom.css
+  # Boostrap 4 (It was getting conflict with Dracula theme)
+  # - https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css
+
+extra_javascript:
+  - js/custom.js
