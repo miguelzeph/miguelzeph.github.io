@@ -39,3 +39,4 @@ extra_javascript:
   - js/custom.js
   # Google Analytics
   - https://www.googletagmanager.com/gtag/js?id=G-MV51GYN8DB
+  - js/analytics.js

@@ -1,11 +1,5 @@
-<!-- Adding google Analytics -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MV51GYN8DB');
-</script>
+<!-- Google Console search -->
+<meta name="google-site-verification" content="3UoZUlCMwNP_4QnYjXc-dXQeiiCkzQBJABzp5EhCX1g" />
 
 # Welcome to My Portfolio
 
