@@ -98,3 +98,5 @@ git push origin gh-pages
 Your documentation will be deployed to the gh-pages branch and available via GitHub Pages.
 
 P.S. So now you will make the changes in the **master** branch and when you want to update your github page you just need to use the commands `mkdocs build` & `mkdocs gh-deploy` and your page will be updated automatically.
+
+P.S. the best way to track your page with `Google Search Console` using mkdocs (except the material theme) is coping the google.html file inside the **docs** folder, this way when you generate a site using `mkdocs build` & `mkdocs gh-deploy` it won't exclude the google file.
