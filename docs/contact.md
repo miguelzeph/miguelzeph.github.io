@@ -15,7 +15,7 @@
 
 **LinkedIn:** [Miguel Amaral](https://www.linkedin.com/in/miguel-amaral-56a11610a/)
 
-**GitHub:**[MiguelZeph](https://github.com/miguelzeph)
+**GitHub:** [MiguelZeph](https://github.com/miguelzeph)
 
 ---
 

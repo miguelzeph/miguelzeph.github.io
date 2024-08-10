@@ -2,7 +2,7 @@
 
 I am a Python Developer and Data Engineer with around 15 years of experience in data science and engineering. My career has provided me with extensive expertise in Python programming, data pipelines, data analysis, and predictive modeling.
 
-I specialize in developing and managing ETL processes, creating data pipelines, and orchestrating containerized environments. My skills extend to API management, dashboard creation, AI implementation, and cloud services. I am proficient in web scraping, text parsing, web development, and database management, with a strong focus on both information retrieval and machine learning techniques. I have a preference for working in Linux/Ubuntu environments but am also experienced with Windows using WSL2.
+My expertise includes developing and managing ETL processes, creating data pipelines, and orchestrating containerized environments. My skills extend to API management, dashboard creation, AI implementation, and cloud services. I am proficient in web scraping, text parsing, web development, and database management, with a strong focus on both information retrieval and machine learning techniques. While I prefer working on Linux/Ubuntu environments but am also experienced with Windows using WSL2.
 
 ---
 

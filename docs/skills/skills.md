@@ -369,7 +369,7 @@
 <!-- Card for BeautifulSoup -->
 <div class="col-md-4 mb-3">
   <div class="card" style="width: 18rem;">
-    <img src="../img/beautifulsoup.jpg" class="card-img-top" alt="BeautifulSoup">
+    <img src="../img/bs4.jpg" class="card-img-top" alt="BeautifulSoup">
     <div class="card-body">
       <h5 class="card-title">BeautifulSoup</h5>
       <p class="card-text">Experience with BeautifulSoup for parsing HTML and XML documents.</p>
@@ -424,16 +424,6 @@
     </div>
   </div>
 </div>
-<!-- Card for Agile/Scrum -->
-<div class="col-md-4 mb-3">
-  <div class="card" style="width: 18rem;">
-    <img src="../img/agile.jpg" class="card-img-top" alt="Agile/Scrum">
-    <div class="card-body">
-      <h5 class="card-title">Agile/Scrum</h5>
-      <p class="card-text">Proficient in Agile methodologies and Scrum practices for project management.</p>
-    </div>
-  </div>
-</div>
 <!-- Card for CI/CD -->
 <div class="col-md-4 mb-3">
   <div class="card" style="width: 18rem;">
@@ -444,25 +434,37 @@
     </div>
   </div>
 </div>
-<!-- Card for API Development -->
-<div class="col-md-4 mb-3">
-  <div class="card" style="width: 18rem;">
-    <img src="../img/api.jpg" class="card-img-top" alt="API Development">
-    <div class="card-body">
-      <h5 class="card-title">API Development</h5>
-      <p class="card-text">Proficient in developing and integrating APIs for various applications.</p>
+</div>
+</div>
+
+---
+
+# PROJECT MANAGEMENT SOFTWARE
+<div class="p-md-7 section-content">
+  <div class="row">
+    <!-- Card for Jira -->
+    <div class="col-md-4 mb-3">
+      <div class="card" style="width: 18rem;">
+        <img src="../img/jira.jpg" class="card-img-top" alt="Jira Logo">
+        <div class="card-body">
+          <h5 class="card-title">Jira</h5>
+          <p class="card-text">
+            Jira is a powerful project management tool developed by Atlassian.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Card for Redmine -->
+    <div class="col-md-4 mb-3">
+      <div class="card" style="width: 18rem;">
+        <img src="../img/readmine.jpg" class="card-img-top" alt="Redmine Logo">
+        <div class="card-body">
+          <h5 class="card-title">Redmine</h5>
+          <p class="card-text">
+            Redmine is an open-source project management and issue tracking tool.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<!-- Card for Microservices -->
-<div class="col-md-4 mb-3">
-  <div class="card" style="width: 18rem;">
-    <img src="../img/microservices.jpg" class="card-img-top" alt="Microservices">
-    <div class="card-body">
-      <h5 class="card-title">Microservices</h5>
-      <p class="card-text">Experience in designing and implementing microservices architecture.</p>
-    </div>
-  </div>
-</div>
-</div>
 </div>
