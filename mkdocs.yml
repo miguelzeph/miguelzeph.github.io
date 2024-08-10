@@ -40,3 +40,8 @@ extra_javascript:
   # Google Analytics
   - https://www.googletagmanager.com/gtag/js?id=G-MV51GYN8DB
   - js/analytics.js
+  # Hacking to add <meta> to the <head> tag.
+  # - Google Search Console
+  # Only way I found to add meta tags to the head
+  # using the dracula theme.
+  - js/inject_meta.js
