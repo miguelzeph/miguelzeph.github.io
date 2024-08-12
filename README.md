@@ -1,6 +1,13 @@
 # Freelance Resource Page
 
-The **Freelance Resource Page** is designed to assist freelancers in finding resources, tools, and strategies to optimize their freelance work. Built with ![Python 3.11](https://img.shields.io/badge/python-3.11-blue), this project offers a modern and efficient way to access essential freelance information.
+This project designed to show freelancers how to create a well-organized, easy-to-maintain webpage for displaying portfolios, resources, and strategies. Built with ![Python 3.11](https://img.shields.io/badge/python-3.11-blue), this project offers a modern and efficient way to access essential freelance information.
+
+## 🌐 Access the Page
+
+You can view the full documentation and explore the resources directly on our GitHub Pages site:
+
+[![Freelance Resource Page](https://img.shields.io/badge/GitHub-Pages-brightgreen?style=for-the-badge)](https://miguelzeph.github.io/)
+
 
 ## Installation
 
