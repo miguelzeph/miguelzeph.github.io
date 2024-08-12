@@ -16,7 +16,7 @@ The **Freelance Resource Page** is designed to assist freelancers in finding res
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/freelance-resource-page.git
+git clone git@github.com:miguelzeph/miguelzeph.github.io.git
 cd freelance-resource-page
 ```
 
