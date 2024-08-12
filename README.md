@@ -62,7 +62,7 @@ mkdocs serve
 Open http://localhost:8000 in your web browser to explore the documentation.
 
 
-### Publishing on GitHub Pages
+### Publishing on GitHub Pages (It's part of CI/CD)
 To publish your documentation on GitHub Pages, follow these steps:
 
 1. Make sure you are working on **master** branch

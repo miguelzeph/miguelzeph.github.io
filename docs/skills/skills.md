@@ -209,7 +209,7 @@
         <img src="../img/lens.jpg" class="card-img-top" alt="Lens">
         <div class="card-body">
           <h5 class="card-title">Lens</h5>
-          <p class="card-text">Experience with Lens for efficient Kubernetes cluster management.</p>
+          <p class="card-text"></p>
         </div>
       </div>
     </div>
