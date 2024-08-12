@@ -75,7 +75,7 @@
 
 ---
 
-# IMAGE CLASSIFIER
+# MACHINE LEARNING & IMAGE CLASSIFIER & AI
 
 
 <div class="p-md-7 section-content">
@@ -88,6 +88,39 @@
         <div class="card-body">
           <h5 class="card-title">TensorFlow/Keras</h5>
           <p class="card-text">Experience in building and training image classifiers using TensorFlow and Keras.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card for Scikit-learn -->
+    <div class="col-md-4 mb-3">
+      <div class="card" style="width: 18rem;">
+        <img src="../img/scikit.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Scikit-Learn</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card for Open Ai -->
+    <div class="col-md-4 mb-3">
+      <div class="card" style="width: 18rem;">
+        <img src="../img/openai.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">GPT/Openai Integration</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card for Transformers -->
+    <div class="col-md-4 mb-3">
+      <div class="card" style="width: 18rem;">
+        <img src="../img/transformers.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Transformers</h5>
+          <p class="card-text"></p>
         </div>
       </div>
     </div>
@@ -140,6 +173,16 @@
 
 <div class="p-md-7 section-content">
   <div class="row">
+  <!-- Card for Docker -->
+  <div class="col-md-4 mb-3">
+    <div class="card" style="width: 18rem;">
+      <img src="../img/docker.jpg" class="card-img-top" alt="Docker">
+      <div class="card-body">
+        <h5 class="card-title">Docker</h5>
+        <p class="card-text">Skilled in containerization with Docker for application deployment and management.</p>
+      </div>
+    </div>
+  </div>
     <!-- Card for Kubernetes -->
     <div class="col-md-4 mb-3">
       <div class="card" style="width: 18rem;">
@@ -307,6 +350,16 @@
         </div>
       </div>
     </div>
+    <!-- Card for Jupyter -->
+    <div class="col-md-4 mb-3">
+      <div class="card" style="width: 18rem;">
+        <img src="../img/jupyter.jpg" class="card-img-top" alt="Plotly">
+        <div class="card-body">
+          <h5 class="card-title">Jupyter Notebook</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -346,6 +399,16 @@
         </div>
       </div>
     </div>
+  <!-- Card for MySQL -->
+      <div class="col-md-4 mb-3">
+        <div class="card" style="width: 18rem;">
+          <img src="../img/elastic_search.jpg" class="card-img-top" alt="Elastic Search">
+          <div class="card-body">
+            <h5 class="card-title">Elastic Search</h5>
+            <p class="card-text"></p>
+          </div>
+        </div>
+      </div>
 
   </div>
 </div>
@@ -401,7 +464,7 @@
 
 ---
 
-# SOFTWARE ENGINEERING
+# VERSION CONTROL
 <div class="p-md-7 section-content">
 <div class="row">
 <!-- Card for Git -->
@@ -414,16 +477,6 @@
     </div>
   </div>
 </div>
-<!-- Card for Docker -->
-<div class="col-md-4 mb-3">
-  <div class="card" style="width: 18rem;">
-    <img src="../img/docker.jpg" class="card-img-top" alt="Docker">
-    <div class="card-body">
-      <h5 class="card-title">Docker</h5>
-      <p class="card-text">Skilled in containerization with Docker for application deployment and management.</p>
-    </div>
-  </div>
-</div>
 <!-- Card for CI/CD -->
 <div class="col-md-4 mb-3">
   <div class="card" style="width: 18rem;">
@@ -431,6 +484,26 @@
     <div class="card-body">
       <h5 class="card-title">CI/CD</h5>
       <p class="card-text">Experienced in Continuous Integration and Continuous Deployment (CI/CD) practices.</p>
+    </div>
+  </div>
+</div>
+<!-- Card for Gitub -->
+<div class="col-md-4 mb-3">
+  <div class="card" style="width: 18rem;">
+    <img src="../img/github.jpg" class="card-img-top" alt="GitHub">
+    <div class="card-body">
+      <h5 class="card-title">GitHub</h5>
+      <p class="card-text"></p>
+    </div>
+  </div>
+</div>
+<!-- Card for GitLab -->
+<div class="col-md-4 mb-3">
+  <div class="card" style="width: 18rem;">
+    <img src="../img/gitlab.jpg" class="card-img-top" alt="GitLab">
+    <div class="card-body">
+      <h5 class="card-title">GitLab</h5>
+      <p class="card-text"></p>
     </div>
   </div>
 </div>
