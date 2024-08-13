@@ -1,4 +1,9 @@
-site_name: "Miguel Amaral<br><hr>Data Engineer & Python Dev"
+site_name: |
+  <strong style="color: #da5139;">Miguel Amaral</strong><br>
+  <hr class="custom-hr">
+  <span style="color: #8be9fd;">Data Engineer</span><br>
+  <span style="color: #50fa7b;">&</span><br>
+  <span style="color: #ffb86c;">Python Dev</span>
 repo_url: https://github.com/miguelzeph/miguelzeph.github.io
 site_url: https://miguelzeph.github.io
 theme:
@@ -13,7 +18,7 @@ theme:
   favicon: 'img/favicon.ico'
 
 nav:
-  - Home: index.md
+  - "Home": index.md
   - "👤 About Me": about/about.md
   - "📚 Skills": "skills/skills.md"
   - "💼 Projects":
