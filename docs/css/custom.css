@@ -1,7 +1,17 @@
 /* ------------------- FONT CUSTOM SIZE --------------------- */
 
 /* Adjusts the font size of headings */
-h1, h2, h3, h4, h5, h6 {
+h1 {
+    font-size: 1.5em /* Adjust the value as needed */
+}
+
+/* Adjusts the font size of headings */
+h2, h3 {
+    font-size: 1.1em; /* Adjust the value as needed */
+}
+
+/* Adjusts the font size of headings */
+h4, h5, h6 {
     font-size: 1.0em; /* Adjust the value as needed */
 }
 
