@@ -23,7 +23,11 @@ nav:
   - "📚 Skills": "skills/skills.md"
   - "📑 Documentation":
       - "🐍 Python":
-          - "01 - Python Good Starting": documentation/python/python_good_starting.md
+          - "01 - Python Good Starting": documentation/python/01_python_good_starting.md
+          - "02 - Python Organize Code": documentation/python/02_python_organize_code.md
+          - "03 - Typing & Docstring": documentation/python/03_typing_docstring.md
+      - "🐙 Version Control":
+          - "01 - GitFlow": documentation/version_control/01_gitflow.md
   - "💼 Projects":
       - "Data Queue Keeper": projects/data_queue_keeper.md
       - "Train Your Classifier": projects/train_your_classifier.md
