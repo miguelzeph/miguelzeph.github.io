@@ -21,6 +21,9 @@ nav:
   - "Home": index.md
   - "👤 About Me": about/about.md
   - "📚 Skills": "skills/skills.md"
+  - "📑 Documentation":
+      - "🐍 Python":
+          - "01 - Python Good Starting": documentation/python/python_good_starting.md
   - "💼 Projects":
       - "Data Queue Keeper": projects/data_queue_keeper.md
       - "Train Your Classifier": projects/train_your_classifier.md
