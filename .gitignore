@@ -1,2 +1,4 @@
-
+# In Case "mkdocs build" generate the "site" in master
+# Which we don't need that since we are using the 
+# branch gh-pages to keep our pages.
 # site/
