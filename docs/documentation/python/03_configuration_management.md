@@ -12,7 +12,13 @@ P.S. Before you start, make sure you have Python and `pip` installed on your mac
 pip install klein-config
 ```
 
-* 2.Create a configuration file named `config.yml`. This file will contain all your configuration settings in YAML format. Below is an example of what the `config.yml` file might look like:
+* 2.Create a Configuration File:
+
+You can use either a `YAML` file or a `JSON` file to store your configuration settings. Below are examples of what these files might look like:
+
+* 2.1.Using YAML:
+
+Create a configuration file named `config.yml`. This file will contain all your configuration settings in YAML format.
 
 ```yml
 logger:
@@ -25,11 +31,31 @@ mongo:
   collection: task
 ```
 
+* 2.2.Using JSON:
+
+Alternatively, you can create a `JSON` configuration file named `config.json`. The structure of the JSON file would be similar to the YAML file but in JSON format.
+
+
+```json
+{
+  "logger": {
+    "level": "INFO"
+  },
+  "mongo": {
+    "hostname": "mongodb",
+    "port": 27017,
+    "database": "task_management",
+    "collection": "task"
+  }
+}
+```
+
 * 3.Set the configuration File Path: Set the path to your c`onfig.yml` file in the `KLEIN_CONFIG` environment variable. You can do this by exporting the variable in your terminal:
 
 ```bash
 export KLEIN_CONFIG=./my-path/config.yml
-# Replace ./my-path/config.yml with the actual PATH TO YOUR configuration file.
+# Or if you are using JSON:
+export KLEIN_CONFIG=./my-path/config.json
 ```
 
 * 4.Create a `settings.py` file: In your Python project, create a file named `settings.py` to import and use the configuration settings. Here is an example of how you can do this:
@@ -110,3 +136,6 @@ if __name__ == "__main__":
 ```
 
 By following this approach, you can create modular and well-organized pipelines in your code, allowing you to import configurations only when necessary, which enhances the readability and maintainability of your project.
+
+## Author
+Miguel Angelo do Amaral Junior
