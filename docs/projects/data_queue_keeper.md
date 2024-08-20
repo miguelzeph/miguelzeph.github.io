@@ -38,43 +38,43 @@ The project is organized as follows:
 
 ### How to Run
 
-1. **Clone the repository:**
+* 1.**Clone the repository:**
 
-    ```bash
-    git clone git@github.com:miguelzeph/data_queue_keeper.git
-    cd data-queue-keeper
-    ```
+```bash
+git clone git@github.com:miguelzeph/data_queue_keeper.git
+cd data-queue-keeper
+```
 
-2. **Set up the Python environment:**
+* 2.**Set up the Python environment:**
 
-    - Create and activate a virtual environment (optional but recommended):
+Create and activate a virtual environment (optional but recommended):
 
-      ```bash
-      virtualenv --python=<your_python_path> <your_env_name>
-      source ./<your_env_name>/bin/activate  # On Windows, use `<your_env_name>\Scripts\activate`
-      ```
+```bash
+virtualenv --python=<your_python_path> <your_env_name>
+source ./<your_env_name>/bin/activate  # On Windows, use `<your_env_name>\Scripts\activate`
+```
 
-    - Install the dependencies:
+Install the dependencies:
 
-      ```bash
-      pip install -r requirements.txt
-      ```
+```bash
+pip install -r requirements.txt
+```
 
-3. **Start the containers with Docker Compose:**
+* 3.**Start the containers with Docker Compose:**
 
-    ```bash
-    docker-compose up --build
-    ```
+```bash
+docker-compose up --build
+```
 
-4. **Send messages to RabbitMQ:**
+* 4.**Send messages to RabbitMQ:**
 
-    - Run the `sender.py` script to send JSON messages to the RabbitMQ queue:
+  Run the `sender.py` script to send JSON messages to the RabbitMQ queue:
 
-      ```bash
-      python sender.py
-      ```
+```bash
+python sender.py
+```
 
-5. **Verify data insertion in MongoDB:**
+* 5.**Verify data insertion in MongoDB:**
 
     - Use the MongoDB CLI or a client to check the stored data.
 
