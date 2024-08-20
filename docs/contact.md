@@ -1,7 +1,7 @@
-<div style="max-width: 500px; margin: auto; padding: 20px; border: 10px solid #ccc; border-radius: 20px; background-color: #2e2e2e; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); color: #f8f8f2;">
+<div style="max-width: 500px; margin: auto; padding: 20px; border: 5px solid #ccc; border-radius: 20px; background-color: #2e2e2e; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); color: #f8f8f2;">
 <!-- Profile Picture -->
 <div style="text-align: center; margin-bottom: 20px;">
-    <img src="../about/img/profile_raw.png" alt="Profile Picture" style="border-radius: 100%; width: 165px; height: 200px; border: 7px solid #ffb86c;">
+    <img src="../about/img/profile_raw.png" alt="Profile Picture" style="border-radius: 100%; width: 165px; height: 200px; border: 4px solid #ffb86c;">
 </div>
 
 <!-- Name and Title -->
@@ -12,6 +12,16 @@
     <span style="color: #ffb86c;">Python Dev</span>
 </h2>
 
+<!-- Dots Color -->
+<ul style="display: flex; justify-content: center; padding: 0; list-style-type: none; gap: 10px;" class="dot-ul">
+        <li><div class="dot-li drac-bg-cyan"></div></li>
+        <li><div class="dot-li drac-bg-green"></div></li>
+        <li><div class="dot-li drac-bg-orange"></div></li>
+        <li><div class="dot-li drac-bg-pink"></div></li>
+        <li><div class="dot-li drac-bg-purple"></div></li>
+        <li><div class="dot-li drac-bg-red"></div></li>
+        <li><div class="dot-li drac-bg-yellow"></div></li>
+</ul>
 <!-- Contact Information -->
 <hr style="border-top: 1px solid #444; margin-bottom: 30px;">
 
