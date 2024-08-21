@@ -87,3 +87,10 @@ summary {
 summary:hover {
     background-color: #6272a4; /* Highlight color on hover */
 }
+
+
+/* -------------------- Scientific Articles List -------------------------*/
+.article_li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
