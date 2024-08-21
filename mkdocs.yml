@@ -32,10 +32,7 @@ nav:
   - "💼 Projects":
       - "Data Queue Keeper": projects/data_queue_keeper.md
       - "Train Your Classifier": projects/train_your_classifier.md
-  - "🛠️ Services":
-      - "Data Pipeline": services/data_pipeline.md
-      - "Predictive Modeling": services/predictive_modeling.md
-      - "Web App for Data Visualization": services/web_application_data_visualization.md
+  - "🛠️ Services": services/services.md
   - "🔬 Scientific Articles": scientific_articles/scientific_articles.md
   - "📞 Contact": contact.md
 
