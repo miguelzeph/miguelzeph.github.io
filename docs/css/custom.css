@@ -1,18 +1,31 @@
+/* --------------------------- Content --------------------------------- */
+.content {
+    background-color: #3b3f50; /* Background color for content */
+    padding: 1em; /* Add padding to ensure content is not flush with edges */
+    border-left: 2px solid #6272a4; /* Border color for content */
+}
+
 /* ------------------- FONT CUSTOM SIZE --------------------- */
 
 /* Adjusts the font size of headings */
 h1 {
-    font-size: 1.5em /* Adjust the value as needed */
+    font-size: 1.5em; /* Adjust the value as needed */
+    color: #affaff; /* Accent color for headers */
+
 }
 
 /* Adjusts the font size of headings */
-h2, h3 {
+h2 {
     font-size: 1.1em; /* Adjust the value as needed */
+    color: #afcfff; /* Accent color for headers */
+
 }
 
 /* Adjusts the font size of headings */
-h4, h5, h6 {
+h3, h4, h5, h6 {
     font-size: 1.0em; /* Adjust the value as needed */
+    color: #e6bffd; /* Accent color for headers */
+
 }
 
 /* Adjusts the font size of the main text */
@@ -53,4 +66,24 @@ a {
 
 .card-body {
     padding: 1rem;
+}
+
+/* -------------------- Details & Summary (toggle) ---------------------- */
+details {
+    margin-bottom: 1em;
+    overflow: hidden; /* Ensures the details container doesn't overflow */
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.5em;
+    background-color: #44475a; /* Background color for summary in Dracula theme */
+    color: #e1d3f8; /* Text color */
+    border: 2px solid #6272a4; /* Border color */
+    border-radius: 10px;
+}
+
+summary:hover {
+    background-color: #6272a4; /* Highlight color on hover */
 }
