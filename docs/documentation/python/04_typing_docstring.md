@@ -1,12 +1,12 @@
-# 03 - The Importance of Typing and Docstrings in Python
+# 04 - The Importance of Typing and Docstrings in Python
 
 ## Overview
-In Python, the use of typing and docstrings is critical for maintaining high-quality, maintainable, and readable code. These practices not only improve the development process but also enhance collaboration within the team. This document explains the importance of typing and docstrings and how they contribute to a more efficient and robust codebase.
+In Python, the use of `typing` & `docstrings` is critical for maintaining high-quality, maintainable, and readable code. These practices not only improve the development process but also `enhance collaboration within the team`. This document explains the importance of typing and docstrings and how they contribute to a more efficient and robust codebase.
 
 ## Importance of Typing
 
 ### What is Typing?
-Typing in Python refers to the practice of explicitly specifying the data types of variables, function arguments, and return values. Python is a dynamically-typed language, meaning that the interpreter determines the type of a variable at runtime. However, using type hints (introduced in Python 3.5) allows developers to indicate the expected data types.
+Typing in Python refers to the practice of explicitly specifying the data types of variables, function arguments, and return values. Python is a dynamically-typed language, meaning that the interpreter determines the type of a variable at runtime. However, using type hints (introduced in `Python 3.5`) allows developers to indicate the expected data types.
 
 ### Benefits of Typing
 
@@ -27,7 +27,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-In this example, the function add explicitly states that it expects two integers as arguments and will return an integer. This clarity is beneficial for anyone reading the code.
+In this example, the function add explicitly states that it expects two integers as arguments and will return an integer. This clarity is beneficial for anyone reading the code `even if it is a simple function, it is always good practice to use typing annotations in your code`.
 
 
 ## Importance of Docstrings
@@ -88,4 +88,8 @@ In this example, the docstring provides a clear and concise explanation of what 
 * **Leverage Tools**: Utilize tools like mypy for type checking and Sphinx for generating documentation from docstrings.
 
 ## Conclusion
-Incorporating typing and docstrings into your development workflow significantly enhances the readability, maintainability, and reliability of your code. These practices not only help individual developers but also foster better teamwork and collaboration by providing clear and consistent documentation. By adhering to these standards, the team can ensure a more efficient and error-free development process.
+Incorporating `typing` and `docstrings` into your development workflow significantly enhances the readability, maintainability, and reliability of your code. These practices not only help individual developers but also foster better teamwork and collaboration by providing clear and consistent documentation. By adhering to these standards, the team can ensure a more efficient and error-free development process.
+
+## Author
+
+Miguel Angelo Do Amaral Junior
