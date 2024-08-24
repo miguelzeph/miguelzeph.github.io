@@ -27,6 +27,7 @@ nav:
           - "02 - Organazing into Modules": documentation/python/02_python_organize_modules.md
           - "03 - Configuration Management": documentation/python/03_configuration_management.md
           - "04 - Typing & Docstring": documentation/python/04_typing_docstring.md
+          - "05 - Built-in functions": documentation/python/05_built-in_functions.md
       - "🐙 Version Control":
           - "01 - GitFlow": documentation/version_control/01_gitflow.md
   - "💼 Projects":
