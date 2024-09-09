@@ -67,4 +67,6 @@ extra_javascript:
   # - Google Search Console
   # Only way I found to add meta tags to the head
   # using the dracula theme.
-  - js/inject_meta.js
+  - js/inject_search.js
+  # Hacking tag head for Google Adsense
+  - js/inject_adsense.js
