@@ -8,7 +8,7 @@
 - **MongoDB**: Provides persistent data storage.
 - **Python Application**: Consumes messages from the RabbitMQ queue and stores the data in MongoDB.
 
-<img src="../img/rabbitmq_graph.png" alt="RabbitMQ" width="50%">
+<img src="../img/rabbitmq_graph.png" alt="RabbitMQ" width="80%">
 
 [![Explore on GitHub](https://img.shields.io/badge/Explore_on_GitHub-100000?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/miguelzeph/data_queue_keeper)
 
