@@ -42,6 +42,7 @@ nav:
           - "01 - DE Introduction": documentation/data_engineering/01_introduction_data_engineering.md
 
   - "💼 Projects":
+      - "Minute News": projects/minute_news.md
       - "Data Queue Keeper": projects/data_queue_keeper.md
       - "Train Your Classifier": projects/train_your_classifier.md
       - "Airflow Guide": projects/airflow_guide.md
