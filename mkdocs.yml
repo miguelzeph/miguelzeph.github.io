@@ -38,9 +38,10 @@ nav:
           - "05 - Data Semi-Structured": documentation/data/05_data_semi_structured.md
           - "06 - Data Unstructured": documentation/data/06_data_unstructured.md
           - "07 - Data Blending": documentation/data/07_data_blending.md
-      - "👷‍💻 Data Engineering":
+      - "👷 Data Engineering":
           - "01 - DE Introduction": documentation/data_engineering/01_introduction_data_engineering.md
-
+      - "💻 AWS":
+          - "EC2 Instance - Deploying Docker": documentation/aws/01_deploy_docker_AWS_EC2.md
   - "💼 Projects":
       - "Minute News": projects/minute_news.md
       - "Data Queue Keeper": projects/data_queue_keeper.md
