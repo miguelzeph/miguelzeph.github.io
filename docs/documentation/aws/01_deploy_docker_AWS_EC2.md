@@ -1,6 +1,11 @@
-# Deploying a Docker Container on AWS EC2
+# Deploying a Docker Container on AWS EC2 from Scratch
 
 This guide will walk you through the steps to deploy your Docker container on an AWS EC2 instance.
+
+### Prerequisites
+- AWS Account
+- Docker installed on your local machine
+- An application to deploy (Dockerized)
 
 ## 1. Build Your Application
 First, create and test your application locally. Once the app is ready, move to the next steps to containerize it using Docker.
@@ -38,6 +43,23 @@ Increase the default storage volume size up to 30GB — this is covered under th
 ### 3.2 Save the SSH Key
 During instance creation, generate and download a key pair (.pem file). You'll need this to SSH into your instance.
 
+### 3.3 Access the EC2 Instance
+Once the EC2 instance is running, you can access it in two ways:
+
+- **SSH into the EC2 Instance**
+If you are accessing from your terminal, use SSH with the .pem key to connect:
+
+```bash
+ssh -i your-key.pem ec2-user@your-ec2-public-ip
+```
+
+Or You can also connect directly through the AWS Console:
+
+- **connect via AWS Console (easier)**
+    - In the EC2 Dashboard, find your instance.
+    - Click Connect.
+    - Choose the EC2 Instance Connect tab and click Connect.
+
 ### 3.3 Install Docker on EC2
 Once the instance is running, SSH into (or access from AWS console clicking in "Connect") the EC2 instance and install Docker.
 
@@ -65,11 +87,28 @@ Run your Docker container on the EC2 instance:
 docker run -d -p <host-port>:<container-port> <image-name>
 ```
 
-## 4. Set Up a Security Group
+## 4. Configure EC2 Security Group
 Create or modify a security group for your EC2 instance to allow incoming traffic on the ports needed by your application (e.g., HTTP: 80 or a custom port).
 
 - Go to the EC2 Dashboard > Security Groups.
-- Add inbound rules for the necessary ports and set the source to `0.0.0.0/0` or restrict it to specific IPs.
+- Select the security group associated with your EC2 instance.
+- Click Edit Inbound Rules and add the following rules
+    - SSH (to allow SSH access):
+    ```bash
+    Type: SSH
+    Protocol: TCP
+    Port Range: 22
+    Source: 0.0.0.0/0
+    ```
+    - Custom TCP Rule (to allow access to your application) for the necessary ports and set the source to `0.0.0.0/0` or restrict it to specific IPs:
+    ```bash
+    Type: Custom TCP Rule
+    Protocol: TCP
+    Port Range: <your-app-port>
+    Source: 0.0.0.0/0
+    ```
+
+Make sure the port you're exposing is open and accessible from external sources. This will allow you to access both your application and SSH into your EC2 instance.
 
 ## 5. Assign an Elastic IP
 To ensure your public IP remains static (doesn’t change when you stop/start your instance):
