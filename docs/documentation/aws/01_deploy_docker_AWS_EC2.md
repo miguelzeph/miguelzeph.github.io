@@ -26,14 +26,15 @@ docker save -o <image-name>.tar <image-name>
 ### 2.2 Option B: Push to Docker Hub
 Alternatively, you can push your image to Docker Hub:
 
-- 1.Tag your image:
+- 1.Login:
 ```bash
-docker tag <image-name> <dockerhub-username>/<repository>:<tag>
+sudo docker login
 ```
 
 - 2.Push your image:
 ```bash
 docker push <dockerhub-username>/<repository>:<tag>
+# ex: docker push miguelzeph/flask-news:latest
 ```
 Once your image is on Docker Hub, you can pull it from the EC2 instance later.
 
