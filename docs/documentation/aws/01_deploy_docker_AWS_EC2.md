@@ -11,7 +11,11 @@ This guide will walk you through the steps to deploy your Docker container on an
 First, create and test your application locally. Once the app is ready, move to the next steps to containerize it using Docker.
 
 ## 2. Create a Docker Image
-Once your app is built, you need to create a Docker image for it.
+Once your app is built, you need to create a Docker image for it, for example: **docker-user/image-name:tag**
+
+```bash
+sudo docker build -t miguelzeph/flask-news:latest .
+```
 
 ### 2.1 Option A: Create a `.tar` Image for SSH Transfer
 If you plan to transfer the image to your EC2 instance via SSH, create a tarball (`.tar`) of your Docker image by running:
@@ -81,10 +85,34 @@ docker pull <dockerhub-username>/<repository>:<tag>
 ```
 ### 3.5 Run the Container
 
-Run your Docker container on the EC2 instance:
+- Run your Docker container on the EC2 instance:
 
 ```bash
 docker run -d -p <host-port>:<container-port> <image-name>
+
+# Example
+sudo docker run -d -p 8000:8000 miguelzeph/flask-news:latest gunicorn -w 4 -b 0.0.0.0:8000 app:app
+
+```
+
+- P.S -> In case you have chosen the B process (using DockerHub), create a file to configure your own app (because the conf file used to create the image was just an example to not push sensitive information to the repository).
+
+```bash
+# Create a file for your configuration according to your project
+nano config_flask_news.yml
+```
+
+- Copy this file to the Container that is running with the application (get the container-id using `ps` command).
+
+```bash
+sudo docker cp config_flask_news.yml <container-id>:/app/config_example.yml
+```
+
+- Restart the Container if necessary
+
+```bash
+sudo docker stop <container-id>
+sudo docker start <container-id>
 ```
 
 ## 4. Configure EC2 Security Group
