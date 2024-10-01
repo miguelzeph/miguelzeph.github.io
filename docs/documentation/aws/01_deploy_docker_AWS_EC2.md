@@ -82,6 +82,7 @@ docker load -i <image-name>.tar
 
 - **Option B**: Pull the image directly from Docker Hub:
 ```bash
+docker login
 docker pull <dockerhub-username>/<repository>:<tag>
 ```
 ### 3.5 Run the Container
