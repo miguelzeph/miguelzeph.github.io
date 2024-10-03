@@ -28,6 +28,7 @@ nav:
           - "03 - Configuration Management": documentation/python/03_configuration_management.md
           - "04 - Typing & Docstring": documentation/python/04_typing_docstring.md
           - "05 - Built-in functions": documentation/python/05_built-in_functions.md
+          - "06 - Built-in methods": documentation/python/06_built-in_methods.md
       - "🐙 Version Control":
           - "01 - GitFlow": documentation/version_control/01_gitflow.md
       - "💾 Data Basics":
@@ -44,6 +45,9 @@ nav:
           - "01 - EC2 Instance - Deploying Docker": documentation/aws/01_deploy_docker_AWS_EC2.md
           - "02 - EC2 App - Custom Domain HTTP": documentation/aws/02_AWS_EC2_domain_http
           - "03 - EC2 App - Custom Domain HTTPS": documentation/aws/03_AWS_EC2_domain_https
+      - "🌐 API":
+          - "01 - API base": documentation/api/01_api_basic.md
+          - "02 - REST API vs GraphQL API": documentation/api/02_api_rest_graphql.md
 
   - "💼 Projects":
       - "Minute News": projects/minute_news.md
