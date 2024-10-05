@@ -41,7 +41,7 @@ a {
 
 /* ----------------------- CARD IMAGES ---------------------------- */
 .card {
-    background-color: #362a28; /* Dark background color similar to the Dracula theme */
+    background-color: #362828; /* Dark background color similar to the Dracula theme */
     border: 1px solid #44475a; /* Subtle border to highlight the card */
     border-radius: 8px; /* Rounded corners */
     color: #f8f8f2; /* Text color to ensure readability */

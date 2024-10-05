@@ -2,6 +2,8 @@
 
 I am a **Python Developer** and **Data Engineer** with around 15 years of experience in data science and engineering, based in **Stoke**. My expertise lies in Python programming, data pipelines, data analysis, and predictive modeling.
 
+#### P.S for more information about technologies, visit 🚀**<a href="https://amaralapps.com" target="_blank">AmaralApps.com</a>**🚀
+
 ### Key Skills and Expertise
 
 - **ETL Processes**: Developing and managing robust ETL pipelines.

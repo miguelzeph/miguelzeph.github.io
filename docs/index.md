@@ -2,6 +2,9 @@
 
 Hello, and welcome to my portfolio! I’m **Miguel Amaral**, a passionate **Python Developer** and **Data Engineer** with over 15 years of experience in Python programming and data science.
 
+
+#### P.S for more information about technologies, visit 🚀**<a href="https://amaralapps.com" target="_blank">AmaralApps.com</a>**🚀
+
 With a background in developing data pipelines, managing ETL processes, and creating predictive models, I specialize in turning complex data into actionable insights. Whether it's building scalable solutions, implementing machine learning algorithms, or developing interactive dashboards, I bring a wealth of expertise to every project.
 
 Feel free to explore my work, dive into my projects, and see how I can help you achieve your data and development goals. 
