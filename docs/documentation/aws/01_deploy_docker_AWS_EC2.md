@@ -1,4 +1,4 @@
-# Deploying a Docker Container on AWS EC2 from Scratch
+# 1. Deploying a Docker Container on AWS EC2 from Scratch
 
 This guide will walk you through the steps to deploy your Docker container on an AWS EC2 instance.
 

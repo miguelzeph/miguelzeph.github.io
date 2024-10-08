@@ -44,8 +44,8 @@ nav:
           - "01 - DE Introduction": documentation/data_engineering/01_introduction_data_engineering.md
       - "💻 AWS":
           - "01 - EC2 Instance - Deploying Docker": documentation/aws/01_deploy_docker_AWS_EC2.md
-          - "02 - EC2 App - Custom Domain HTTP": documentation/aws/02_AWS_EC2_domain_http
-          - "03 - EC2 App - Custom Domain HTTPS": documentation/aws/03_AWS_EC2_domain_https
+          - "02 - EC2 App - Custom Domain HTTP": documentation/aws/02_AWS_EC2_domain_http.md
+          - "03 - EC2 App - Custom Domain HTTPS": documentation/aws/03_AWS_EC2_domain_https.md
       - "🌐 API":
           - "01 - API base": documentation/api/01_api_basic.md
           - "02 - REST API vs GraphQL API": documentation/api/02_api_rest_graphql.md
@@ -56,6 +56,7 @@ nav:
       - "Data Queue Keeper": projects/data_queue_keeper.md
       - "Train Your Classifier": projects/train_your_classifier.md
       - "Airflow Guide": projects/airflow_guide.md
+      - "Doc Lib": projects/document_library.md 
   - "🛠️ Services": services/services.md
   - "🔬 Scientific Articles": scientific_articles/scientific_articles.md
   - "📞 Contact": contact.md

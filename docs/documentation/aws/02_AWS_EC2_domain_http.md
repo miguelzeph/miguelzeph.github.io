@@ -1,4 +1,4 @@
-# Mapping an AWS EC2 Application to a Custom Domain over HTTP
+# 2. Mapping an AWS EC2 Application to a Custom Domain over HTTP
 
 ## 1. Create Your Domain
 
@@ -84,6 +84,25 @@ Once Nginx is configured and running, visit your application in the browser usin
 http://yourdomain.com
 ```
 
+--- 
+
+### OBSERVATION - If it still not working
+- Check DNS and create a **A Record**
+    - **Record name**: Fill with the domain name you want ex: **www.covid.amaralapps.com**
+    - Select the record type as **A - IPv4 address**.
+    - In the **Value** field, enter your server’s IP address, <your-static-api>, ex: 41.198.251.100. .
+Select Simple routing and click Create records to save.
+- Verifique o Firewall no Servidor:
+```bash
+sudo ufw status
+sudo ufw enable # if is enable you can activate
+sudo ufw allow 80
+sudo ufw allow 8502
+```
+- Check the **security group**
+    - TCP: check if you opened the port 80 (http) and 443 (https)
+- Check again the file `/etc/nginx/sites-available/your-domain`
+- restart nginx
 --- 
 
 ## Summary of Commands

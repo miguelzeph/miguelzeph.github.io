@@ -1,4 +1,4 @@
-# Enable HTTPS for AWS EC2 Application
+# 3. Enable HTTPS for AWS EC2 Application
 In this guide, you will learn how to secure your application hosted on AWS EC2 by enabling HTTPS with free SSL certificates from Let's Encrypt using **Certbot** and configuring **Nginx**.
 
 ### Prerequisites
