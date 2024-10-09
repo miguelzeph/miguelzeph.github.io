@@ -1,0 +1,96 @@
+/* --------------------------- Content --------------------------------- */
+.content {
+    background-color: #3b3f50; /* Background color for content */
+    padding: 1em; /* Add padding to ensure content is not flush with edges */
+    border-left: 2px solid #6272a4; /* Border color for content */
+}
+
+/* ------------------- FONT CUSTOM SIZE --------------------- */
+
+/* Adjusts the font size of headings */
+h1 {
+    font-size: 1.5em; /* Adjust the value as needed */
+    color: #affaff; /* Accent color for headers */
+
+}
+
+/* Adjusts the font size of headings */
+h2 {
+    font-size: 1.1em; /* Adjust the value as needed */
+    color: #afcfff; /* Accent color for headers */
+
+}
+
+/* Adjusts the font size of headings */
+h3, h4, h5, h6 {
+    font-size: 1.0em; /* Adjust the value as needed */
+    color: #e6bffd; /* Accent color for headers */
+
+}
+
+/* Adjusts the font size of the main text */
+body {
+    font-size: 14px; /* Adjust the value as needed */
+}
+
+/* Adjusts the font size of links and other elements */
+a {
+    font-size: 14px; /* Adjust the value as needed */
+}
+
+
+/* ----------------------- CARD IMAGES ---------------------------- */
+.card {
+    background-color: #362828; /* Dark background color similar to the Dracula theme */
+    border: 1px solid #44475a; /* Subtle border to highlight the card */
+    border-radius: 8px; /* Rounded corners */
+    color: #f8f8f2; /* Text color to ensure readability */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding-top: 1rem; /* Top padding to space the image from the top of the card */
+}
+
+.card-img-top {
+    width: 100%; /* Image width will occupy 100% of the card container */
+    height: auto; /* Height will adjust automatically to maintain aspect ratio */
+    max-height: 150px; /* Maximum image height, adjustable as needed */
+    object-fit: contain; /* Adjusts the image to fit inside the container without cropping */
+}
+
+.card-title {
+    color: #f8f8f2; /* Card title color */
+}
+
+.card-text {
+    color: #f8f8f2; /* Card text color */
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+/* -------------------- Details & Summary (toggle) ---------------------- */
+details {
+    margin-bottom: 1em;
+    overflow: hidden; /* Ensures the details container doesn't overflow */
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.5em;
+    background-color: #44475a; /* Background color for summary in Dracula theme */
+    color: #e1d3f8; /* Text color */
+    border: 2px solid #6272a4; /* Border color */
+    border-radius: 10px;
+}
+
+summary:hover {
+    background-color: #6272a4; /* Highlight color on hover */
+}
+
+
+/* -------------------- Scientific Articles List -------------------------*/
+.article_li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
