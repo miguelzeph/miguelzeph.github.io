@@ -52,12 +52,14 @@ nav:
           - "02 - REST API vs GraphQL API": documentation/api/02_api_rest_graphql.md
 
   - "💼 Projects":
+      - "COVID-19 Data Dashboard": projects/covid_dashboard.md
       - "AmaralApps Webpage": projects/amaralapps_webpage.md
       - "Minute News": projects/minute_news.md
       - "Data Queue Keeper": projects/data_queue_keeper.md
       - "Train Your Classifier": projects/train_your_classifier.md
       - "Airflow Guide": projects/airflow_guide.md
-      - "Doc Lib": projects/document_library.md 
+      - "Doc Lib": projects/document_library.md
+    
   - "🛠️ Services": services/services.md
   - "🔬 Scientific Articles": scientific_articles/scientific_articles.md
   - "📞 Contact": contact.md
