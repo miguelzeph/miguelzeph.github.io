@@ -46,6 +46,7 @@ nav:
           - "01 - EC2 Instance - Deploying Docker": documentation/aws/01_deploy_docker_AWS_EC2.md
           - "02 - EC2 App - Custom Domain HTTP": documentation/aws/02_AWS_EC2_domain_http.md
           - "03 - EC2 App - Custom Domain HTTPS": documentation/aws/03_AWS_EC2_domain_https.md
+          - "04 - EC2 App - (STREAMLIT) Custom Domain HTTPS": documentation/aws/04_AWS_EC2_domain_https_streamlit.md
       - "🌐 API":
           - "01 - API base": documentation/api/01_api_basic.md
           - "02 - REST API vs GraphQL API": documentation/api/02_api_rest_graphql.md
