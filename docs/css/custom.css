@@ -1,67 +1,96 @@
 /* --------------------------- Content --------------------------------- */
 .content {
-    background-color: #3b3f50; /* Background color for content */
-    padding: 1em; /* Add padding to ensure content is not flush with edges */
-    border-left: 2px solid #6272a4; /* Border color for content */
+    background-color: #282a36; /* Fundo escuro mais uniforme no tema Dracula */
+    padding: 1em;
+    border-left: 4px solid #50fa7b; /* Verde suave para contraste */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+    border-radius: 8px;
 }
 
 /* ------------------- FONT CUSTOM SIZE --------------------- */
 
-/* Adjusts the font size of headings */
+/* Fontes dos Títulos */
 h1 {
-    font-size: 1.5em; /* Adjust the value as needed */
-    color: #affaff; /* Accent color for headers */
-
+    font-size: 2.2em; /* Tamanho do h1 mais destacado */
+    color: #ff79c6;
+    text-align: center; /* Centraliza o h1 para mais ênfase */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para destaque */
+    margin-bottom: 0.5em;
 }
 
-/* Adjusts the font size of headings */
 h2 {
-    font-size: 1.1em; /* Adjust the value as needed */
-    color: #afcfff; /* Accent color for headers */
-
+    font-size: 1.8em; /* Tamanho de h2 ajustado */
+    color: #8be9fd;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Leve sombra */
+    margin-bottom: 0.5em;
 }
 
-/* Adjusts the font size of headings */
 h3, h4, h5, h6 {
-    font-size: 1.0em; /* Adjust the value as needed */
-    color: #e6bffd; /* Accent color for headers */
-
+    font-size: 1.5em; /* Tamanho uniforme para hierarquia */
+    color: #bd93f9;
+    margin-bottom: 0.5em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* Adjusts the font size of the main text */
+/* Fonte do Corpo de Texto */
 body {
-    font-size: 14px; /* Adjust the value as needed */
+    font-size: 17px; /* Fonte um pouco maior para legibilidade */
+    color: #f8f8f2;
+    line-height: 1.6; /* Espaçamento entre linhas para conforto de leitura */
 }
 
-/* Adjusts the font size of links and other elements */
+/* Links */
 a {
-    font-size: 14px; /* Adjust the value as needed */
+    font-size: 15px; /* Consistência com o corpo do texto */
+    color: #50fa7b;
+    text-decoration: none;
+    border-bottom: 1px solid transparent; /* Bordar inicial transparente para suavidade */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Animação suave */
+}
+
+a:hover {
+    color: #ffb86c;
+    border-bottom: 1px solid #ffb86c; /* Sublinhado sólido ao hover */
 }
 
 
 /* ----------------------- CARD IMAGES ---------------------------- */
 .card {
-    background-color: #362828; /* Dark background color similar to the Dracula theme */
-    border: 1px solid #44475a; /* Subtle border to highlight the card */
-    border-radius: 8px; /* Rounded corners */
-    color: #f8f8f2; /* Text color to ensure readability */
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    padding-top: 1rem; /* Top padding to space the image from the top of the card */
+    background-color: #44475a;
+    border: 1px solid #6272a4;
+    border-radius: 8px;
+    color: #f8f8f2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito de elevação */
+    padding-top: 1rem;
+    margin-bottom: 1.5em; /* Espaço entre cards */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Sombra para profundidade */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
 }
 
 .card-img-top {
-    width: 100%; /* Image width will occupy 100% of the card container */
-    height: auto; /* Height will adjust automatically to maintain aspect ratio */
-    max-height: 150px; /* Maximum image height, adjustable as needed */
-    object-fit: contain; /* Adjusts the image to fit inside the container without cropping */
+    width: 100%;
+    height: auto;
+    max-height: 150px; 
+    object-fit: contain; 
+    border-bottom: 1px solid #6272a4; /* Linha de separação da imagem */
+    margin-bottom: 1rem;
 }
 
 .card-title {
-    color: #f8f8f2; /* Card title color */
+    color: #f8f8f2;
+    font-size: 1.4em;
+    text-align: center;
+    margin-bottom: 0.5em;
 }
 
 .card-text {
-    color: #f8f8f2; /* Card text color */
+    color: #f8f8f2;
+    font-size: 1em;
 }
 
 .card-body {
@@ -71,26 +100,42 @@ a {
 /* -------------------- Details & Summary (toggle) ---------------------- */
 details {
     margin-bottom: 1em;
-    overflow: hidden; /* Ensures the details container doesn't overflow */
+    overflow: hidden; 
+    background-color: #44475a;
+    border-radius: 6px;
+    padding: 0.5em;
+    border: 1px solid #6272a4;
+    transition: background-color 0.3s ease;
 }
 
 summary {
     cursor: pointer;
     font-weight: bold;
     padding: 0.5em;
-    background-color: #44475a; /* Background color for summary in Dracula theme */
-    color: #e1d3f8; /* Text color */
-    border: 2px solid #6272a4; /* Border color */
-    border-radius: 10px;
+    background-color: #6272a4;
+    color: #f8f8f2;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 summary:hover {
-    background-color: #6272a4; /* Highlight color on hover */
+    background-color: #50fa7b;
+    color: #282a36;
 }
-
-
 /* -------------------- Scientific Articles List -------------------------*/
 .article_li {
     margin-top: 10px;
     margin-bottom: 10px;
+    color: #f8f8f2;
+    font-size: 1em;
+    padding: 0.5em 0.8em;
+    background-color: #44475a;
+    border-radius: 6px;
+    border-left: 3px solid #bd93f9;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.article_li:hover {
+    background-color: #6272a4;
+    border-left: 3px solid #50fa7b;
 }
