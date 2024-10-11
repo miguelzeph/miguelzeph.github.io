@@ -42,6 +42,8 @@ nav:
           - "07 - Data Blending": documentation/data/07_data_blending.md
       - "👷 Data Engineering":
           - "01 - DE Introduction": documentation/data_engineering/01_introduction_data_engineering.md
+          - "02 - ETL vs ELT": documentation/data_engineering/02_ETL_vs_ELT.md
+          - "03 - Data Warehouse vs Database": documentation/data_engineering/03_warehouse_database.md
       - "💻 AWS":
           - "01 - EC2 Instance - Deploying Docker": documentation/aws/01_deploy_docker_AWS_EC2.md
           - "02 - EC2 App - Custom Domain HTTP": documentation/aws/02_AWS_EC2_domain_http.md
