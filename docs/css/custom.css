@@ -139,3 +139,40 @@ summary:hover {
     background-color: #6272a4;
     border-left: 3px solid #50fa7b;
 }
+
+
+/* ------------------------- Table Styles ---------------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #44475a; /* Fundo de tabela */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5em;
+}
+
+th, td {
+    padding: 0.8em;
+    text-align: left;
+    border: 1px solid #6272a4; /* Bordas de células */
+    color: #f8f8f2; /* Cor de texto */
+}
+
+th {
+    background-color: #6272a4; /* Fundo de cabeçalhos */
+    color: #f8f8f2; /* Cor do texto do cabeçalho */
+    text-transform: uppercase;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #282a36; /* Fundo alternado para linhas pares */
+}
+
+tr:hover {
+    background-color: #50fa7a3f; /* Fundo de destaque ao hover */
+    color: #282a36; /* Cor de texto ao hover */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ------------------------- End of Table Styles --------------------- */
