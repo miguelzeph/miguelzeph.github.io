@@ -62,6 +62,8 @@ nav:
       - "Train Your Classifier": projects/train_your_classifier.md
       - "Airflow Guide": projects/airflow_guide.md
       - "Doc Lib": projects/document_library.md
+  - "📊 Data Career Guide":
+      - "01 - introduction Data Career": data_career_guide/01_Introduction_data_career.md
     
   - "🛠️ Services": services/services.md
   - "🔬 Scientific Articles": scientific_articles/scientific_articles.md
