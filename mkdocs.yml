@@ -73,7 +73,7 @@ nav:
 
 plugins:
   - search
-  - autorefs # Link others pages
+  # - autorefs # Link others pages
   - glightbox # Images
   # - awesome-pages
   # - markdownextradata

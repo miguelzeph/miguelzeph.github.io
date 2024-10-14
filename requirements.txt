@@ -2,4 +2,4 @@ mkdocs==1.6.0
 mkdocs-dracula-theme==1.0.7 # theme
 mkdocs-material==9.5.31 # theme
 mkdocs-glightbox==0.4.0 # images
-ghp-import==2.1.0 # creating static page
+ghp-import==2.1.0 # creating static page and publicate github pages
