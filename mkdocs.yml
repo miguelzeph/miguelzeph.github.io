@@ -17,6 +17,8 @@ theme:
     code: 'Fira Code'
   logo: 'about/img/profile.png'
   favicon: 'img/favicon.ico'
+  toc: true  # Ativa a table of contents
+
 
 nav:
   - "Home": index.md
@@ -64,7 +66,6 @@ nav:
       - "Doc Lib": projects/document_library.md
   - "📊 Data Career Guide":
       - "01 - introduction Data Career": data_career_guide/01_Introduction_data_career.md
-    
   - "🛠️ Services": services/services.md
   - "🔬 Scientific Articles": scientific_articles/scientific_articles.md
   - "📞 Contact": contact.md
@@ -72,6 +73,8 @@ nav:
 
 plugins:
   - search
+  - autorefs # Link others pages
+  - glightbox # Images
   # - awesome-pages
   # - markdownextradata
 
