@@ -27,12 +27,6 @@ For a deeper dive into my professional journey and technologies I work with, vis
 - **Web Development**: Flask, Django, HTML/CSS, JavaScript
 - **Data Visualization**: Matplotlib, Seaborn, Plotly, Kibana
 
-### Languages
-
-- **Portuguese**: Native
-- **English**: Proficient
-- **Spanish**: Good comprehension
-
 ---
 
 Feel free to explore my work, dive into my projects, and see how I can help you achieve your data and development goals. **[Check out my GitHub](https://github.com/miguelzeph)** for examples of my work and **[contact me](mailto:miguel.junior.mat@hotmail.com)** to discuss your next project.
