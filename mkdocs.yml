@@ -24,20 +24,20 @@ nav:
   - "Home": index.md
   - "👤 About Me": about/about.md
   - "📚 Skills": "skills/skills.md"
-  - "📘 Knowledge Base":
+  - "📘 Important Concepts":
       - "👷 Data Engineering":
-          - "01 - DE Introduction": knowledge/data_engineering/01_introduction_data_engineering.md
-          - "02 - ETL vs ELT": knowledge/data_engineering/02_ETL_vs_ELT.md
-          - "03 - Data Warehouse vs Database vs Datalake": knowledge/data_engineering/03_warehouse_database_datalake.md
-          - "04 - Scalability": knowledge/data_engineering/04_scalability.md
+          - "01 - DE Introduction": concepts/data_engineering/01_introduction_data_engineering.md
+          - "02 - ETL vs ELT": concepts/data_engineering/02_ETL_vs_ELT.md
+          - "03 - Data Warehouse vs Database vs Datalake": concepts/data_engineering/03_warehouse_database_datalake.md
+          - "04 - Scalability": concepts/data_engineering/04_scalability.md
       - "💾 Data Basics":
-          - "01 - Data Modeling": knowledge/data/01_data_modeling.md
-          - "02 - Data Structures": knowledge/data/02_data_structures.md
-          - "03 - Data Types": knowledge/data/03_data_types.md
-          - "04 - Data Structured": knowledge/data/04_data_structured.md
-          - "05 - Data Semi-Structured": knowledge/data/05_data_semi_structured.md
-          - "06 - Data Unstructured": knowledge/data/06_data_unstructured.md
-          - "07 - Data Blending": knowledge/data/07_data_blending.md
+          - "01 - Data Modeling": concepts/data/01_data_modeling.md
+          - "02 - Data Structures": concepts/data/02_data_structures.md
+          - "03 - Data Types": concepts/data/03_data_types.md
+          - "04 - Data Structured": concepts/data/04_data_structured.md
+          - "05 - Data Semi-Structured": concepts/data/05_data_semi_structured.md
+          - "06 - Data Unstructured": concepts/data/06_data_unstructured.md
+          - "07 - Data Blending": concepts/data/07_data_blending.md
   - "📑 Documentation":
       - "🐍 Python":
           - "01 - Python Good Starting": documentation/python/01_python_good_starting.md
