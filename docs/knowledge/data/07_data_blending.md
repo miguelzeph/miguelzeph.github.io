@@ -1,4 +1,4 @@
-# Data Blending: An Overview
+# 7. Data Blending: An Overview
 
 ## What is Data Blending?
 Data blending is the process of pulling data from multiple sources to create a single, unified dataset for analysis and visualization. This allows for a comprehensive view of the data without needing to move or join all the data in one place.

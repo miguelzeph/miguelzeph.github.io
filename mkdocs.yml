@@ -24,6 +24,20 @@ nav:
   - "Home": index.md
   - "👤 About Me": about/about.md
   - "📚 Skills": "skills/skills.md"
+  - "📘 Knowledge Base":
+      - "👷 Data Engineering":
+          - "01 - DE Introduction": knowledge/data_engineering/01_introduction_data_engineering.md
+          - "02 - ETL vs ELT": knowledge/data_engineering/02_ETL_vs_ELT.md
+          - "03 - Data Warehouse vs Database vs Datalake": knowledge/data_engineering/03_warehouse_database_datalake.md
+          - "04 - Scalability": knowledge/data_engineering/04_scalability.md
+      - "💾 Data Basics":
+          - "01 - Data Modeling": knowledge/data/01_data_modeling.md
+          - "02 - Data Structures": knowledge/data/02_data_structures.md
+          - "03 - Data Types": knowledge/data/03_data_types.md
+          - "04 - Data Structured": knowledge/data/04_data_structured.md
+          - "05 - Data Semi-Structured": knowledge/data/05_data_semi_structured.md
+          - "06 - Data Unstructured": knowledge/data/06_data_unstructured.md
+          - "07 - Data Blending": knowledge/data/07_data_blending.md
   - "📑 Documentation":
       - "🐍 Python":
           - "01 - Python Good Starting": documentation/python/01_python_good_starting.md
@@ -34,18 +48,7 @@ nav:
           - "06 - Built-in methods": documentation/python/06_built-in_methods.md
       - "🐙 Version Control":
           - "01 - GitFlow": documentation/version_control/01_gitflow.md
-      - "💾 Data Basics":
-          - "01 - Data Modeling": documentation/data/01_data_modeling.md
-          - "02 - Data Structures": documentation/data/02_data_structures.md
-          - "03 - Data Types": documentation/data/03_data_types.md
-          - "04 - Data Structured": documentation/data/04_data_structured.md
-          - "05 - Data Semi-Structured": documentation/data/05_data_semi_structured.md
-          - "06 - Data Unstructured": documentation/data/06_data_unstructured.md
-          - "07 - Data Blending": documentation/data/07_data_blending.md
-      - "👷 Data Engineering":
-          - "01 - DE Introduction": documentation/data_engineering/01_introduction_data_engineering.md
-          - "02 - ETL vs ELT": documentation/data_engineering/02_ETL_vs_ELT.md
-          - "03 - Data Warehouse vs Database": documentation/data_engineering/03_warehouse_database.md
+          - "02 - Day-to-day commands": documentation/version_control/02_commands.md
       - "💻 AWS":
           - "01 - EC2 Instance - Deploying Docker": documentation/aws/01_deploy_docker_AWS_EC2.md
           - "02 - EC2 App - Custom Domain HTTP": documentation/aws/02_AWS_EC2_domain_http.md
