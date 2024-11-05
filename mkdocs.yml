@@ -62,6 +62,7 @@ nav:
   - "💼 Projects":
       - "COVID-19 Data Dashboard": projects/covid_dashboard.md
       - "AmaralApps Webpage": projects/amaralapps_webpage.md
+      - "Codename": projects/codename.md
       - "Minute News": projects/minute_news.md
       - "Data Queue Keeper": projects/data_queue_keeper.md
       - "Train Your Classifier": projects/train_your_classifier.md
