@@ -51,6 +51,8 @@ Advanced skills in statistics, programming (Python or R), machine learning, and 
 **Main Function:**  
 The Machine Learning Engineer is responsible for deploying models developed by Data Scientists into production. They ensure these models are scalable and properly integrated into the company’s systems. This professional operates at the intersection of machine learning and software engineering.
 
+P.S. `The role of an ML Engineer varies significantly by company and isn’t yet clearly defined—it depends on the project the company is working on. Generally, though, it’s a profession that provides support for trained models, meaning ML Engineers handle the deployment of applications that use models created by data scientists.`
+
 **Key Responsibilities:**
 - Implementing and automating machine learning pipelines.
 - Integrating models into production systems using CI/CD.
