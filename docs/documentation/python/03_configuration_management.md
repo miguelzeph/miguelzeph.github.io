@@ -1,26 +1,39 @@
-# 03 - Configuration Management
-This guide explains how to manage configuration settings in a Python project. There are many different ways to do this in Python, but I want to catch your attention using the library klein-config. Klein-config supports an impressive range of features that simplify configuration management in Python projects. It stands out for its ability to combine configurations from various sources, such as configuration files, environment variables, and command-line arguments, offering a flexible and efficient approach to configuration management.I would like to share a pratical way to set up and use klein-config for your project.
+#  03 Configuration Management Guide with `klein-config`
 
-### Step by Step How to configure your project
+This guide explains how to manage configuration settings in a Python project using the `klein-config` library. `klein-config` supports configurations from various sources like configuration files, environment variables, and command-line arguments, offering a flexible approach to configuration management in Python projects.
 
-* 1.First, you need to install the klein-config library using pip:
+---
 
-P.S. Before you start, make sure you have Python and `pip` installed on your machine.
+## Table of Contents
+- [1. Installing `klein-config`](#1-installing-klein-config)
+- [2. Creating a Configuration File](#2-creating-a-configuration-file)
+  - [2.1 Using YAML](#21-using-yaml)
+  - [2.2 Using JSON](#22-using-json)
+- [3. Setting the Configuration File Path](#3-setting-the-configuration-file-path)
+- [4. Creating a `settings.py` File](#4-creating-a-settingspy-file)
+- [5. Practical Example: Using Imported Configurations](#5-practical-example-using-imported-configurations)
 
+---
+
+### 1. Installing `klein-config`
+
+Before you start, ensure you have Python and `pip` installed on your machine.
+
+Install `klein-config` using pip:
 
 ```bash
 pip install klein-config
 ```
 
-* 2.Create a Configuration File:
+### 2. Creating a Configuration File
 
-You can use either a `YAML` file or a `JSON` file to store your configuration settings. Below are examples of what these files might look like:
+You can use either a `YAML` file or a `JSON` file to store your configuration settings. Below are examples of each.
 
-* 2.1.Using YAML:
+#### 2.1 Using YAML
 
-Create a configuration file named `config.yml`. This file will contain all your configuration settings in YAML format.
+Create a configuration file named `config.yml` with your settings in YAML format:
 
-```yml
+```yaml
 logger:
   level: INFO
 
@@ -31,10 +44,9 @@ mongo:
   collection: task
 ```
 
-* 2.2.Using JSON:
+#### 2.2 Using JSON
 
-Alternatively, you can create a `JSON` configuration file named `config.json`. The structure of the JSON file would be similar to the YAML file but in JSON format.
-
+Alternatively, create a `JSON` configuration file named `config.json` with the same structure in JSON format:
 
 ```json
 {
@@ -50,15 +62,19 @@ Alternatively, you can create a `JSON` configuration file named `config.json`. T
 }
 ```
 
-* 3.Set the configuration File Path: Set the path to your c`onfig.yml` file in the `KLEIN_CONFIG` environment variable. You can do this by exporting the variable in your terminal:
+### 3. Setting the Configuration File Path
+
+Set the path to your `config.yml` or `config.json` file in the `KLEIN_CONFIG` environment variable:
 
 ```bash
 export KLEIN_CONFIG=./my-path/config.yml
-# Or if you are using JSON:
+# Or if using JSON:
 export KLEIN_CONFIG=./my-path/config.json
 ```
 
-* 4.Create a `settings.py` file: In your Python project, create a file named `settings.py` to import and use the configuration settings. Here is an example of how you can do this:
+### 4. Creating a `settings.py` File
+
+In your Python project, create a `settings.py` file to import and use configuration settings. Example:
 
 ```python
 # settings.py
@@ -79,11 +95,11 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 ```
 
-# Practical Example: How to Use Imported Configurations
+### 5. Practical Example: Using Imported Configurations
 
-After setting up the environment variables, you can import these variables or instances anywhere in your Python code. This approach avoids hardcoding or duplicating code, making your project more readable and maintainable.
+After setting up environment variables, you can import these variables or instances anywhere in your Python code. This approach avoids hardcoding or duplicating code, enhancing readability and maintainability.
 
-Imagine a simple Python project structure like this:
+#### Project Structure
 
 ```bash
 .
@@ -99,7 +115,9 @@ Imagine a simple Python project structure like this:
 └── requirements.txt
 ```
 
-In the **mongo_connection.py** file, you can now import the MongoDB settings from **settings.py** and establish a connection without needing to repeat the configuration code:
+#### MongoDB Connection in `mongo_connection.py`
+
+In `mongo_connection.py`, import the MongoDB settings from `settings.py` and establish a connection without repeating configuration code:
 
 ```python
 # File: mongo_connection.py
@@ -115,13 +133,16 @@ mongo_client = pymongo.MongoClient(MONGO_HOSTNAME, MONGO_PORT)
 db = mongo_client[MONGO_DATABASE]
 mongo_collection = db[MONGO_COLLECTION]
 ```
+
 Now, you can simply import the **mongo_collection** variable wherever needed without worrying about the connection or configuration details.
 
-For example, in the **main.py** file:
+#### Example Usage in `main.py`
+
+In `main.py`, you can use `mongo_collection` to interact with your database:
 
 ```python
-
-from settings.mongo_connection import mongo_collection
+# main.py
+from app.mongo.mongo_connection import mongo_collection
 
 if __name__ == "__main__":
 
@@ -135,7 +156,10 @@ if __name__ == "__main__":
     mongo_collection.insert_one(fake_data)
 ```
 
-By following this approach, you can create modular and well-organized pipelines in your code, allowing you to import configurations only when necessary, which enhances the readability and maintainability of your project.
+This approach creates modular, organized pipelines in your code, allowing configuration imports only when necessary, which enhances readability and maintainability.
 
-## Author
+--- 
+
+### Author
+
 Miguel Angelo do Amaral Junior
