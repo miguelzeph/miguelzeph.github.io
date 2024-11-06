@@ -59,6 +59,9 @@ nav:
           - "03 - EC2 App - Custom Domain HTTPS": documentation/aws/03_AWS_EC2_domain_https.md
           - "04 - EC2 App - (STREAMLIT) Custom Domain HTTPS": documentation/aws/04_AWS_EC2_domain_https_streamlit.md
           - "05 - Workmail & SES": documentation/aws/05_AWS_workmail_SES.md
+      - "🐳 Docker":
+          - "01 - Docker Base": documentation/docker/01_docker.md
+          - "02 - DockerFile Guide": documentation/docker/02_dockerfile.md
 
   - "💼 Projects":
       - "COVID-19 Data Dashboard": projects/covid_dashboard.md
