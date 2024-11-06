@@ -21,7 +21,7 @@ h1 {
 h2 {
     font-size: 1.8em; /* Tamanho de h2 ajustado */
     color: #8be9fd;
-    text-align: center;
+    text-align: left;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Leve sombra */
     margin-bottom: 0.5em;
 }
@@ -29,6 +29,7 @@ h2 {
 h3, h4, h5, h6 {
     font-size: 1.5em; /* Tamanho uniforme para hierarquia */
     color: #bd93f9;
+    text-align: left;
     margin-bottom: 0.5em;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }

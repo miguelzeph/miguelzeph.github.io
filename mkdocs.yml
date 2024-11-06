@@ -38,6 +38,10 @@ nav:
           - "05 - Data Semi-Structured": concepts/data/05_data_semi_structured.md
           - "06 - Data Unstructured": concepts/data/06_data_unstructured.md
           - "07 - Data Blending": concepts/data/07_data_blending.md
+      - "🌐 API":
+          - "01 - API base": concepts/api/01_api_basic.md
+          - "02 - REST API vs GraphQL API": concepts/api/02_api_rest_graphql.md
+          - "03 - API Performance": concepts/api/03_api_tips_performance.md
   - "📑 Documentation":
       - "🐍 Python":
           - "01 - Python Good Starting": documentation/python/01_python_good_starting.md
@@ -55,9 +59,6 @@ nav:
           - "03 - EC2 App - Custom Domain HTTPS": documentation/aws/03_AWS_EC2_domain_https.md
           - "04 - EC2 App - (STREAMLIT) Custom Domain HTTPS": documentation/aws/04_AWS_EC2_domain_https_streamlit.md
           - "05 - Workmail & SES": documentation/aws/05_AWS_workmail_SES.md
-      - "🌐 API":
-          - "01 - API base": documentation/api/01_api_basic.md
-          - "02 - REST API vs GraphQL API": documentation/api/02_api_rest_graphql.md
 
   - "💼 Projects":
       - "COVID-19 Data Dashboard": projects/covid_dashboard.md
