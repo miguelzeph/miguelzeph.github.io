@@ -1,38 +1,62 @@
-# 2. ETL vs. ELT: Understanding Data Integration Processes
+# 2. ETL vs. ELT: Understanding Data Integration Processes - parte 1
 
 Data integration is crucial in modern data management, especially in big data environments. Two common processes used for data integration are **ETL (Extract, Transform, Load)** and **ELT (Extract, Load, Transform)**. While they share similar steps, they differ in the sequence and environment in which data transformations are applied.
+
+# Table of Contents
+
+1. [ETL vs. ELT: Understanding Data Integration Processes](#etl-vs-elt-understanding-data-integration-processes)
+2. [What are ETL and ELT?](#what-are-etl-and-elt)
+        - [ETL (Extract, Transform, Load)](#etl-extract-transform-load)
+        - [ELT (Extract, Load, Transform)](#elt-extract-load-transform)
+3. [Key Differences Between ETL and ELT](#key-differences-between-etl-and-elt)
+4. [Pros and Cons of ETL and ELT](#pros-and-cons-of-etl-and-elt)
+5. [Criteria-Based Comparison](#criteria-based-comparison)
+6. [Choosing Between ETL and ELT](#choosing-between-etl-and-elt)
+7. [Python Tooling for ETL and ELT Projects](#python-tooling-for-etl-and-elt-projects)
+        - [ETL Tools](#etl-tools)
+        - [ELT Tools](#elt-tools)
+8. [Summary of ETL vs ELT](#summary-of-etl-vs-elt)
+9. [Documentation on ETL and ELT Pipelines - Part 2](#documentation-on-etl-and-elt-pipelines---part-2)
+        - [Purpose of this Documentation](#purpose-of-this-documentation)
+        - [Types of ETL and ELT](#types-of-etl-and-elt)
+        - [ETL Pipeline with Kafka, Spark, and Airflow](#etl-pipeline-with-kafka-spark-and-airflow)
+        - [ELT Pipeline with Kafka, Data Warehouse, and DBT](#elt-pipeline-with-kafka-data-warehouse-and-dbt)
+10. [Conclusion](#conclusion)
+
 
 ## 1. What are ETL and ELT?
 
 ### ETL (Extract, Transform, Load)
-ETL is a process where data is extracted from source systems, transformed to fit business needs, and then loaded into a destination, usually a data warehouse. This method has been widely used in `traditional` data warehousing.
+ETL is a process where data is extracted from source systems, transformed to fit business needs (`processed data`), and then loaded into a destination, usually a `database`.
 
-#### Steps of ETL:
-1. **Extract**: Data is extracted from various sources, such as databases, APIs, or files.
+1. **Extract**: Data is extracted from `various sources`, such as **databases, APIs, Webscraping** or **files**.
 2. **Transform**: Extracted data is transformed to meet business rules and formatting requirements. This may include data cleaning, aggregation, or enrichment.
 3. **Load**: Transformed data is loaded into the target system, typically a data warehouse or database, ready for analysis.
 
-#### Advantages of ETL:
+**Advantages of ETL:**
+
 - Ensures data is clean and conforms to business requirements before loading, facilitating consistent and accurate analysis.
 - Ideal for databases with lower `processing capacity`, as transformations occur `outside` the destination database, reducing processing load on the target system.
 
-#### Disadvantages of ETL:
+**Disadvantages of ETL:**]
+
 - The transformation process can be slow with large data volumes since it occurs before loading.
 - Less flexibility for ad-hoc analysis, as data is pre-processed and transformed.
 
 ### ELT (Extract, Load, Transform)
-ELT is a process that loads raw data directly into the target system, often a data lake or a cloud data warehouse, and then applies transformations as needed. This approach leverages the processing power of modern data warehouses to perform transformations after loading.
+ELT is a process that loads `raw data` directly into the target system, often a data lake or a cloud `data warehouse`, and then applies `transformations within`  as needed. This approach leverages the processing power of modern data warehouses to perform transformations after loading.
 
-#### Steps of ELT:
 1. **Extract**: Data is extracted from source systems, similar to ETL.
 2. **Load**: Data is loaded in its raw form into the destination, such as a data lake or cloud data warehouse.
 3. **Transform**: After loading, transformations are applied within the data warehouse, using its processing capabilities to clean and format the data.
 
-#### Advantages of ELT:
+**Advantages of ELT:**
+
 - Takes advantage of the scalability and processing power of cloud-based systems, allowing for rapid loading of large datasets.
 - More suitable for ad-hoc analysis and big data environments, as raw data is available for various types of processing.
 
-#### Disadvantages of ELT:
+**Disadvantages of ELT:**
+
 - Requires more processing capacity and a robust data warehouse, which may increase costs.
 - Raw data can consume more storage and may lead to processing delays if transformations are complex.
 
@@ -75,6 +99,7 @@ ELT is a process that loads raw data directly into the target system, often a da
 ## 5. Choosing Between ETL and ELT
 
 When deciding between ETL and ELT, consider the following:
+
 - **Data Volume**: ELT is preferable for large datasets that require cloud scalability.
 - **Transformation Needs**: ETL is ideal when complex data transformations are necessary before analysis.
 - **Infrastructure**: ETL suits on-premises setups, whereas ELT leverages cloud computing.
@@ -84,6 +109,7 @@ When deciding between ETL and ELT, consider the following:
 
 ### ETL Tools
 In an ETL project, transformations occur before data reaches the destination. Common tools include:
+
 - **Python**: General-purpose scripting.
 - **Pandas**: Data manipulation.
 - **SQLAlchemy**: Database interaction.
@@ -91,6 +117,7 @@ In an ETL project, transformations occur before data reaches the destination. Co
 
 ### ELT Tools
 In an ELT project, data is loaded first, and transformations happen within the destination, leveraging cloud power:
+
 - **Snowflake/BigQuery**: Cloud data warehouses.
 - **DBT (Data Build Tool)**: Transformation in the warehouse.
 - **Airflow or Prefect**: ELT pipeline orchestration.

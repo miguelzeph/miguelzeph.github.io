@@ -27,7 +27,8 @@ nav:
   - "📘 Important Concepts":
       - "👷 Data Engineering":
           - "01 - DE Introduction": concepts/data_engineering/01_introduction_data_engineering.md
-          - "02 - ETL vs ELT": concepts/data_engineering/02_ETL_vs_ELT.md
+          - "02 - ETL vs ELT - part 1": concepts/data_engineering/02_ETL_vs_ELT_part1.md
+          - "02 - ETL vs ELT - part 2": concepts/data_engineering/02_ETL_vs_ELT_part2.md
           - "03 - Data Warehouse vs Database vs Datalake": concepts/data_engineering/03_warehouse_database_datalake.md
           - "04 - Scalability": concepts/data_engineering/04_scalability.md
       - "💾 Data Basics":
