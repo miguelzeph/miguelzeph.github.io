@@ -65,7 +65,7 @@ nav:
           - "02 - DockerFile Guide": documentation/docker/02_dockerfile.md
 
   - "💼 Projects":
-      - "Realtime Data Streaming | End To End Data Engineering": projects/streaming_DE.md
+      - "End To End Pipeline ETL": projects/end-to-end-pipeline-etl.md
       - "COVID-19 Data Dashboard": projects/covid_dashboard.md
       - "AmaralApps Webpage": projects/amaralapps_webpage.md
       - "Codename": projects/codename.md

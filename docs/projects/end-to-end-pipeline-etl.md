@@ -153,3 +153,36 @@ Explique a arquitetura do sistema conforme ilustrado no diagrama:
 - **Docker Compose**: Script para facilitar o deploy de todos os componentes em um ambiente de desenvolvimento.
 - **Ambientes**: Explicação sobre ambientes (desenvolvimento, staging, produção) e como configurar variáveis para cada um.
 - **Monitoramento Contínuo**: Configuração de alertas e monitoramento para verificar o desempenho e a saúde do sistema.
+
+### Estrutura do Projeto
+
+```bash
+end-to-end-pipeline-etl/
+│
+├── docker/                           # Arquivos de configuração para Docker
+│   ├── docker-compose.yml            # Docker Compose para orquestrar todos os serviços
+│   ├── Dockerfile_airflow             # Dockerfile para o serviço Airflow (se necessário)
+│   └── Dockerfile_spark               # Dockerfile para o serviço Spark (se necessário)
+│
+├── requirements.txt                  # Dependências Python do projeto
+│
+├── src/                              # Código-fonte principal
+│   ├── api/                          # Código para consumir dados da API externa
+│   │   └── fetch_data.py             # Script para coleta de dados da API e envio ao Kafka (função `extract_data`)
+│   │
+│   ├── airflow/                      # Pipelines e DAGs do Apache Airflow
+│   │   └── dags/
+│   │       └── etl_dag.py            # DAG principal do pipeline ETL, importando as funções
+│   │
+│   ├── kafka/                        # Configuração e scripts para Kafka
+│   │   └── producer.py               # Script do produtor Kafka para enviar dados (função `send_to_kafka`)
+│   │
+│   ├── spark/                        # Scripts para o processamento no Apache Spark
+│   │   └── transform_data.py         # Script para transformação de dados com Spark (função `transform_data`)
+│   │
+│   └── mongodb/                      # Scripts para manipulação de dados no MongoDB
+│       └── load_data.py              # Script para salvar dados no MongoDB (função `load_data`)
+│
+└── README.md                         # Documentação do projeto
+
+```
