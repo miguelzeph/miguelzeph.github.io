@@ -63,6 +63,8 @@ nav:
       - "🐳 Docker":
           - "01 - Docker Base": documentation/docker/01_docker.md
           - "02 - DockerFile Guide": documentation/docker/02_dockerfile.md
+      - "📩 Kafka":
+          - "01 - Introduction": documentation/kafka/01_kafka_introduction.md
 
   - "💼 Projects":
       - "End-to-end Pipeline ETL": projects/end-to-end-pipeline-etl.md
