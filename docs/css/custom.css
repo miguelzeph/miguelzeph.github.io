@@ -26,12 +26,39 @@ h2 {
     margin-bottom: 0.5em;
 }
 
-h3, h4, h5, h6 {
-    font-size: 1.5em; /* Tamanho uniforme para hierarquia */
+h3 {
+    font-size: 1.6em;
     color: #bd93f9;
     text-align: left;
-    margin-bottom: 0.5em;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: bold; /* Destaque adicional */
+    margin-bottom: 0.8em;
+}
+
+h4 {
+    font-size: 1.4em;
+    color: #ffb86c; /* Laranja suave */
+    text-align: left;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-style: italic; /* Variedade com itálico */
+    margin-bottom: 0.7em;
+}
+
+h5 {
+    font-size: 1.3em;
+    color: #8be9fd; /* Azul claro */
+    text-align: left;
+    font-weight: normal; /* Um pouco mais sutil */
+    margin-bottom: 0.6em;
+}
+
+h6 {
+    font-size: 1.1em;
+    color: #50fa7b; /* Verde suave */
+    text-align: left;
+    text-transform: uppercase; /* Diferenciação com caixa alta */
+    letter-spacing: 1px; /* Espaçamento para legibilidade */
+    margin-bottom: 0.5em;
 }
 
 /* Fonte do Corpo de Texto */
@@ -41,19 +68,35 @@ body {
     line-height: 1.6; /* Espaçamento entre linhas para conforto de leitura */
 }
 
-/* Links */
+p {
+    margin-bottom: 2em; /* Espaçamento entre parágrafos */
+    color: #f1f1eee3; /* Cor consistente */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    font-size: 17px; /* Tamanho maior para legibilidade */
+}
+
 a {
-    font-size: 15px; /* Consistência com o corpo do texto */
-    color: #50fa7b;
+    font-size: 14px; /* Ajuste leve */
+    color: #50fa7b; /* Verde característico */
+    font-weight: bold; /* Tornar mais chamativo */
     text-decoration: none;
-    border-bottom: 1px solid transparent; /* Bordar inicial transparente para suavidade */
-    transition: color 0.3s ease, border-bottom 0.3s ease; /* Animação suave */
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 a:hover {
-    color: #ffb86c;
-    border-bottom: 1px solid #ffb86c; /* Sublinhado sólido ao hover */
+    color: #ffb86c; /* Destaque em laranja */
+    border-bottom: 3px solid #ffb86c; /* Linhas mais fortes no hover */
 }
+
+ul, ol {
+    font-size: 18px; /* Maior fonte para listas */
+    margin-bottom: 1em; /* Espaço entre listas */
+    line-height: 1.8; /* Mais espaçamento entre os itens */
+    color: #f1f1eee3;
+    padding-left: 1.5em; /* Indentação para melhor organização visual */
+}
+
 
 
 /* ----------------------- CARD IMAGES ---------------------------- */

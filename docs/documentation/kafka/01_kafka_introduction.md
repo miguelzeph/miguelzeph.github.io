@@ -3,12 +3,51 @@
 
 This guide provides a step-by-step approach to setting up and operating **Kafka**, including an overview of its components and practical instructions for managing topics, producing, and consuming messages.
 
+## Table of Contents
+- [Overview](#overview)
+    - [What is Kafka?](#what-is-kafka)
+- [Setting Up Kafka](#setting-up-kafka)
+    - [1. Start Zookeeper Server](#1-start-zookeeper-server)
+    - [2. Start Kafka Server](#2-start-kafka-server)
+    - [3. Execute Docker Compose](#3-execute-docker-compose)
+- [Basic Kafka Operations](#basic-kafka-operations)
+    - [4. Access Kafka Container](#4-access-kafka-container)
+    - [5. Create a Topic](#5-create-a-topic)
+    - [6. Produce Messages](#6-produce-messages)
+    - [7. Consume Messages](#7-consume-messages)
+- [Graphical Interface](#graphical-interface)
+- [Managing Persistent Data](#managing-persistent-data)
+    - [Remove Old Volumes](#remove-old-volumes)
+- [Create a Custom Consumer](#create-a-custom-consumer)
+    - [1. Install Required Library](#1-install-required-library)
+    - [2. Develop the Consumer](#2-develop-the-consumer)
+    - [3. Add Consumer to Docker Compose](#3-add-consumer-to-docker-compose)
+- [Testing and Handling Failures](#testing-and-handling-failures)
+    - [Stopping a Broker](#stopping-a-broker)
+    - [Restarting the Broker](#restarting-the-broker)
+- [Commands Summary](#commands-summary)
+
 ---
 
 ## **Overview**
 
 <img src="../img/kafka.png" alt="Kafka" width="80%">
 
+---
+
+### What is Kafka?
+
+Kafka is a `Distributed Data Streaming Plataform` where have loads of different services, so it also can be classified in **sub-groups** as:
+
+  - `Message Broker`
+  - `ETL`
+  - `Log System`
+  - `Temporary Event Storage` (data rentention)
+
+
+Let's have a look the Kafka architecture
+
+---
 
 1. **CLUSTER (Scalability):**
 
@@ -33,6 +72,8 @@ This guide provides a step-by-step approach to setting up and operating **Kafka*
 
     - `Sends` messages to `TOPICS`.
 
+---
+
 P.S:
 
 - **Zookeeper:**
@@ -42,20 +83,23 @@ P.S:
 - **Offset:**  
     - A unique identifier for each message within a topic.
 
+
+In summary: The **PRODUCER** `sends` messages to a **TOPIC**, the **BROKER** `manages the topics` and `retains` the messages for a period of time, the **CLUSTER** `manages the brokers`, and the **CONSUMER** `pulls` the data from the **TOPIC**, then performs `transformations` and/or `sends the data to another system or database`.
+
 ---
 
 ## **Setting Up Kafka**
 
-### **1. Start Zookeeper Server**
+#### **1. Start Zookeeper Server**
 - Use the official Docker image for Zookeeper:  
   - [Zookeeper Docker Hub](https://hub.docker.com/_/zookeeper)  
   - Image name: `zookeeper`
 
-### **2. Start Kafka Server**
+#### **2. Start Kafka Server**
 - Use the recommended Kafka Docker image:  
   - `apache/kafka`
 
-### **3. Execute `docker-compose`**
+#### **3. Execute `docker-compose`**
 - Start the services using:
   ```bash
   sudo docker-compose up --build
@@ -165,7 +209,7 @@ WORKDIR /app/consumers
 
 ## **Basic Kafka Operations**
 
-### **4. Access Kafka Container**
+#### **4. Access Kafka Container**
 - Enter the Kafka container:
 
 ```bash
@@ -184,7 +228,7 @@ cd /opt/kafka_2.13-2.8.1/bin/
 find / -name "kafka-topics.sh"
 ```
 
-### **5. Create a Topic**
+#### **5. Create a Topic**
 - Command:
 
 ```bash
@@ -196,7 +240,7 @@ kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 
   - `--partitions`: Number of partitions for the topic.
   - `--topic`: Name of the topic.
 
-### **6. Produce Messages**
+#### **6. Produce Messages**
 
 - **Send Simple Messages**
 
@@ -219,7 +263,7 @@ kafka-console-producer.sh --topic helloworld --bootstrap-server localhost:9092 -
 key1:{"title":"Message Title","content":"Message Content"}
 ```
 
-### **7. Consume Messages**
+#### **7. Consume Messages**
 - Command:
 
 ```bash
@@ -249,16 +293,16 @@ kafka-console-consumer.sh --topic helloworld --bootstrap-server localhost:9092 -
 
 ## **Create a Custom Consumer**
 
-### **1. Install Required Library**
+#### **1. Install Required Library**
 - Use the `confluent-kafka` library:
   ```bash
   pip install confluent-kafka
   ```
 
-### **2. Develop the Consumer**
+#### **2. Develop the Consumer**
 - Write a Python script to act as a custom consumer.
 
-### **3. Add Consumer to Docker Compose**
+#### **3. Add Consumer to Docker Compose**
 - Integrate the consumer into the `docker-compose.yml` file and start the service.
 
 ---
