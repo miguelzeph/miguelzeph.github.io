@@ -5,9 +5,10 @@ This guide provides a step-by-step approach to setting up and operating **Kafka*
 
 ---
 
-## **Theoretical Overview**
+## **Overview**
 
-### **Core Components**
+<img src="../img/kafka.png" alt="Kafka" width="80%">
+
 
 1. **CLUSTER (Scalability):**
 
