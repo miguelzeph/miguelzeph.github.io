@@ -1,6 +1,6 @@
 # 4. Scalability in IT Systems
 
-**Scalability** refers to a system's ability to handle increased load or demand without compromising performance or efficiency. As data volumes and user requests grow, a scalable system adapts seamlessly, ensuring stability and responsiveness.
+**Scalability** refers to a system's **ability to handle increased load or demand** WITHOUT compromising `PERFORMANCE` or `EFFICIENCY`. As data volumes and user requests grow, a scalable system adapts seamlessly, ensuring stability and responsiveness.
 
 To achieve scalability, systems should embody specific characteristics, adhere to best practices, and utilize appropriate technologies. This documentation outlines these elements and explores various scalability types.
 
@@ -55,6 +55,13 @@ To achieve scalability, systems should embody specific characteristics, adhere t
 ---
 
 ## Types of Scalability
+
+
+In short, there are two types of scalability: **horizontal and vertical**.
+
+- **Vertical Scalability**: This is the easiest type. You `increase the machine's RESOURCES` so that it can continue to perform tasks without compromising performance, for example, by increasing **RAM**, **HDD (Hard Disk Drive) memory**, improving the **CPU**, improving the internet connection, etc. The major disadvantage is that resources are finite, so there will come a time when there will be no way to improve and if demand continues to be high, the system will not be able to handle it.
+
+- **Horizontal Scalability**: Horizontal scalability works with the concept of `MICROSERVICES`, where you connect clusters/separate machines and they work together, dividing activities. For example, with Kafka, you can create several clusters on different machines and Zookeeper will manage the demand for tasks that arrive, dividing the tasks on different machines. Horizontal scalability is the process of add more machines to process a task.
 
 | **Type of Scalability**       | **Description**                                                                                                                                                 | **Key Advantage**                                      | **Limitation**                                                           |
 |-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------------------------|
