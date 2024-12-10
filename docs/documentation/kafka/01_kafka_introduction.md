@@ -6,6 +6,7 @@ This guide provides a step-by-step approach to setting up and operating **Kafka*
 ## Table of Contents
 - [Overview](#overview)
     - [What is Kafka?](#what-is-kafka)
+    - [What is the difference between Kafka and RabitMQ?](#what-is-the-difference-between-kafka-and-rabitmq)
 - [Setting Up Kafka](#setting-up-kafka)
     - [1. Start Zookeeper Server](#1-start-zookeeper-server)
     - [2. Start Kafka Server](#2-start-kafka-server)
@@ -46,6 +47,19 @@ Kafka is a `Distributed Data Streaming Plataform` where have loads of different 
 
 
 Let's have a look the Kafka architecture
+
+### What is the difference between Kafka and RabitMQ?
+
+| **Feature**              | **Apache Kafka**                                                                 | **RabbitMQ**                                                                 |
+|--------------------------|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| **Architecture**          | Kafka uses a partitioned log model, combining message queue and publish-subscribe approaches. | RabbitMQ uses a message queue model.                                          |
+| **Scalability**           | Kafka scales by allowing partitions to be distributed across different servers. | Scale by increasing the number of consumers in the queue to distribute processing among concurrent consumers. |
+| **Message Retention**     | Based on policies, for example, messages can be stored for one day. The retention window can be configured by the user. | Based on acknowledgment, meaning messages are deleted as they are consumed.   |
+| **Multiple Consumers**    | Multiple consumers can subscribe to the same topic, as Kafka allows the same message to be replayed for a certain period. | Not possible for multiple consumers to receive the same message, as messages are removed once consumed. |
+| **Replication**           | Topics are replicated automatically, but users can manually configure topics to not be replicated. | Messages are not replicated automatically, but users can manually configure replication. |
+| **Message Ordering**      | Each consumer receives messages in order due to the partitioned log architecture. | Messages are delivered to consumers in the order they arrive in the queue. If there are concurrent consumers, each consumer will process a subset of those messages. |
+| **Protocols**             | Kafka uses a binary protocol over TCP.                                           | Advanced Message Queuing Protocol (AMQP) with support via plugins: MQTT, STOMP. |
+
 
 ---
 
