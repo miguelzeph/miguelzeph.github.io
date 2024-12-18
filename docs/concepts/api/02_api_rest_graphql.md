@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-1. [REST API vs GraphQL API](#rest-api-vs-graphql-api)
+1. REST API vs GraphQL API
    - [Overview](#overview)
    - [Key Differences](#key-differences)
      - [Protocol](#protocol)
