@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>01 - GitFlow - Miguel Angelo Do Amaral<br>
+<hr class="custom-hr">
+<span style="color: #8be9fd;">Data Engineer</span><br>
+<span style="color: #50fa7b;">&</span><br>
+<span style="color: #ffb86c;">Python Dev</span><br><br>
+<a href="https://amaralapps.com" target="_blank">🚀<span style="color:rgb(250,100,100);">www.amaralapps.com</span>🚀</a>
+</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <link rel="canonical" href="https://miguelzeph.github.io/documentation/version_control/01_gitflow/">
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../assets/css/darcula-highlight.min.css">
+
+        <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../../../assets/css/mkdocs.min.css">
+            <link href="../../../css/custom.css" rel="stylesheet">
+
+        
+            <link  rel="icon" type="image/x-icon" href="../../../img/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+
+ <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+
+    <div class="p-4">
+        
+            <img class="logo" src="../../../about/img/profile.png" height="150px">
+        
+
+        <div class="drac-text-center">
+            
+                <span class="drac-text drac-line-height drac-text-white">Miguel Angelo Do Amaral<br>
+<hr class="custom-hr">
+<span style="color: #8be9fd;">Data Engineer</span><br>
+<span style="color: #50fa7b;">&</span><br>
+<span style="color: #ffb86c;">Python Dev</span><br><br>
+<a href="https://amaralapps.com" target="_blank">🚀<span style="color:rgb(250,100,100);">www.amaralapps.com</span>🚀</a>
+</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Home
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../about/about/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    👤 About Me
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../skills/skills/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    📚 Skills
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📘-important-concepts-collapse" aria-expanded="false">
+                    📘 Important Concepts
+                </a>
+                <div class="collapse" id="📘-important-concepts-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#👷-data-engineering-collapse" aria-expanded="false">
+            👷 Data Engineering
+        </a>
+
+        <div class="collapse" id="👷-data-engineering-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/01_introduction_data_engineering/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - DE Introduction
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/02_ETL_vs_ELT_part1/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - ETL vs ELT - part 1
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/02_ETL_vs_ELT_part2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - ETL vs ELT - part 2
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/03_warehouse_database_datalake/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Data Warehouse vs Database vs Datalake
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/04_scalability/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Scalability
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#💾-data-basics-collapse" aria-expanded="false">
+            💾 Data Basics
+        </a>
+
+        <div class="collapse" id="💾-data-basics-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/01_data_modeling/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Data Modeling
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/02_data_structures/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Data Structures
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/03_data_types/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Data Types
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/04_data_structured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Data Structured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/05_data_semi_structured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Data Semi-Structured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/06_data_unstructured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            06 - Data Unstructured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/07_data_blending/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            07 - Data Blending
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🌐-api-collapse" aria-expanded="false">
+            🌐 API
+        </a>
+
+        <div class="collapse" id="🌐-api-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/api/01_api_basic/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - API base
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/api/02_api_rest_graphql/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - REST API vs GraphQL API
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/api/03_api_tips_performance/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - API Performance
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class=" active 
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📑-documentation-collapse" aria-expanded="false">
+                    📑 Documentation
+                </a>
+                <div class="collapse" id="📑-documentation-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐍-python-collapse" aria-expanded="false">
+            🐍 Python
+        </a>
+
+        <div class="collapse" id="🐍-python-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../python/01_python_good_starting/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Python Good Starting
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../python/02_python_organize_modules/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Organazing into Modules
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../python/03_configuration_management/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Configuration Management
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../python/04_typing_docstring/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Typing & Docstring
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../python/05_built-in_functions/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Built-in functions
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../python/06_built-in_methods/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            06 - Built-in methods
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐙-version-control-collapse" aria-expanded="false">
+            🐙 Version Control
+        </a>
+
+        <div class="collapse" id="🐙-version-control-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="./"
+            class=" active 
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - GitFlow
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../02_commands/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Day-to-day commands
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#💻-aws-collapse" aria-expanded="false">
+            💻 AWS
+        </a>
+
+        <div class="collapse" id="💻-aws-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/01_deploy_docker_AWS_EC2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - EC2 Instance - Deploying Docker
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/02_AWS_EC2_domain_http/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - EC2 App - Custom Domain HTTP
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/03_AWS_EC2_domain_https/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - EC2 App - Custom Domain HTTPS
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/04_AWS_EC2_domain_https_streamlit/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - EC2 App - (STREAMLIT) Custom Domain HTTPS
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/05_AWS_workmail_SES/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Workmail & SES
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐳-docker-collapse" aria-expanded="false">
+            🐳 Docker
+        </a>
+
+        <div class="collapse" id="🐳-docker-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../docker/01_docker/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Docker Base
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../docker/02_dockerfile/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - DockerFile Guide
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../docker/03_docker_restart_env_completely/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Restarting Env Completely
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#📩-kafka-collapse" aria-expanded="false">
+            📩 Kafka
+        </a>
+
+        <div class="collapse" id="📩-kafka-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../kafka/01_kafka_introduction/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Introduction
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#💼-projects-collapse" aria-expanded="false">
+                    💼 Projects
+                </a>
+                <div class="collapse" id="💼-projects-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/end-to-end-pipeline-etl/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            End-to-end Pipeline ETL
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/covid_dashboard/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            COVID-19 Data Dashboard
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/amaralapps_webpage/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            AmaralApps Webpage
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/codename/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Codename
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/minute_news/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Minute News
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/data_queue_keeper/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Data Queue Keeper
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/train_your_classifier/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Train Your Classifier
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/airflow_guide/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Airflow Guide
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/document_library/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Doc Lib
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📊-data-career-guide-collapse" aria-expanded="false">
+                    📊 Data Career Guide
+                </a>
+                <div class="collapse" id="📊-data-career-guide-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../data_career_guide/01_Introduction_data_career/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - introduction Data Career
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../../services/services/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    🛠️ Services
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../scientific_articles/scientific_articles/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    🔬 Scientific Articles
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../contact/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    📞 Contact
+                </a>
+            </li>
+        </ul>
+        <!-- endblock -->
+    </div>
+</nav>
+        <!-- endblock -->
+
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href="../../python/06_built-in_methods/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../02_commands/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                            
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="overview-of-gitflow">Overview of GitFlow</h1>
+<p>GitFlow is a branching model that aims to streamline collaborative development and continuous delivery. The model introduces multiple branches with specific roles:</p>
+<ul>
+<li><strong>Feature branches</strong>: For developing new features.</li>
+<li><strong>Develop branch</strong>: An integration branch for feature work.</li>
+<li><strong>Main (or Master) branch</strong>: A stable branch that always reflects production-ready code.</li>
+</ul>
+<p>Using GitFlow, teams can ensure code quality, reduce integration issues, and maintain a clear history of changes.</p>
+<h2 id="branching-strategy">Branching Strategy</h2>
+<ol>
+<li><strong>Feature Branches</strong></li>
+</ol>
+<p>Feature branches are created to develop new features, bug fixes, or other significant changes. They branch off from the develop branch and are named descriptively to reflect the work being done. For example, a new login feature might be developed on a branch called <code>feature/login-page</code>.</p>
+<ol>
+<li><strong>Development Branch</strong></li>
+</ol>
+<p>The <code>develop</code> branch serves as the integration branch for feature branches. It contains the latest, bleeding-edge changes that are being prepared for the next release. It is essential to keep this branch stable to facilitate smooth integration of features.</p>
+<ol>
+<li><strong>Main Branch</strong></li>
+</ol>
+<p>The <code>main</code> (or <code>master</code>) branch represents the stable, production-ready state of the project. It only contains code that has been thoroughly tested and reviewed. Releases are created by merging changes from <code>develop</code> into <code>main</code>.</p>
+<h2 id="creating-a-feature-branch">Creating a Feature Branch</h2>
+<p>To create a new feature branch, follow these steps:</p>
+<ul>
+<li>Ensure Your Local Repository is Up-to-Date:</li>
+</ul>
+<pre><code class="language-bash">git checkout develop
+git pull origin develop
+</code></pre>
+<ul>
+<li>Create the Feature Branch:</li>
+</ul>
+<pre><code class="language-bash">git checkout -b feature/your-feature-name
+</code></pre>
+<ul>
+<li>Start Development:
+Begin coding on your feature branch. Commit your changes regularly with clear and concise commit messages.</li>
+</ul>
+<pre><code class="language-bash">git add .
+git commit -m &quot;Added initial implementation of [your feature]&quot;
+</code></pre>
+<ul>
+<li>Push the Feature Branch to Remote:</li>
+</ul>
+<pre><code class="language-bash">git push origin feature/your-feature-name
+</code></pre>
+<h2 id="merging-a-feature-branch-into-develop">Merging a Feature Branch into Develop</h2>
+<p>Once your feature is complete, it's time to merge it into the <code>develop</code> branch. Follow these steps:</p>
+<h3 id="1-open-a-pull-request">1. Open a Pull Request</h3>
+<ul>
+<li>Go to your repository on GitHub (or any other Git hosting service) and open a Pull Request (PR) to merge your feature branch into <code>develop</code>.</li>
+<li>Provide a clear title and description of the changes in the PR.</li>
+</ul>
+<h3 id="2-code-review-process">2. Code Review Process</h3>
+<ul>
+<li>The PR should be reviewed by at least one or more team members.</li>
+<li>Reviewers should focus on code quality, functionality, and consistency with the project’s coding standards.</li>
+<li>If there are any issues, feedback should be provided, and necessary changes should be made before approval.</li>
+</ul>
+<h3 id="3-merging-to-develop">3. Merging to Develop</h3>
+<ul>
+<li>
+<p>Once the PR is approved, the feature branch can be merged into develop.</p>
+</li>
+<li>
+<p>After merging, delete the feature branch both locally and remotely to keep the repository clean.</p>
+</li>
+</ul>
+<pre><code class="language-bash">git branch -d feature/your-feature-name
+git push origin --delete feature/your-feature-name
+</code></pre>
+<h2 id="merging-develop-into-main">Merging Develop into Main</h2>
+<p>After a set of features or fixes are integrated into <code>develop</code>, the next step is to prepare for a release by merging into <code>main</code>.</p>
+<h3 id="1-final-testing">1. Final Testing</h3>
+<ul>
+<li>Ensure that all features on <strong>develop</strong> have been tested thoroughly.</li>
+<li>Run integration tests, unit tests, and any other relevant testing processes.</li>
+</ul>
+<h3 id="2-preparing-for-release">2. Preparing for Release</h3>
+<p>Update the CHANGELOG.md to reflect all changes.
+Update the version number as needed according to semantic versioning practices.</p>
+<h3 id="3-merging-and-tagging">3. Merging and Tagging</h3>
+<ul>
+<li>Merge the develop branch into main:</li>
+</ul>
+<pre><code class="language-bash">git checkout main
+git pull origin main
+git merge --no-ff develop
+</code></pre>
+<ul>
+<li>Push the main branch:</li>
+</ul>
+<pre><code class="language-bash">git push origin main
+</code></pre>
+<h1 id="conclusion">Conclusion</h1>
+<p>GitFlow provides a structured approach to managing complex development projects. By following these best practices, teams can ensure smooth collaboration, maintain high code quality, and deliver stable releases. Remember to communicate clearly, review code thoroughly, and test rigorously to make the most out of GitFlow.</p>
+<h1 id="author">Author</h1>
+<ul>
+<li>Miguel Angelo do Amaral Junior</li>
+</ul></p>
+    </article>
+</section>
+            <!-- endblock -->
+
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
+    </div>
+</footer>
+            <!-- endblock -->
+        </div>
+
+    </main>
+
+        <script>var base_url = '../../..';</script>
+        <script src="../../../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../assets/js/mkdocs.js"></script>
+			<script src="../../../js/custom.js" defer></script>
+			<script src="https://www.googletagmanager.com/gtag/js?id=G-MV51GYN8DB" defer></script>
+			<script src="../../../js/analytics.js" defer></script>
+			<script src="../../../js/inject_search.js" defer></script>
+			<script src="../../../js/inject_adsense.js" defer></script>
+			<script src="../../../search/main.js" defer></script>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
+
+</html>

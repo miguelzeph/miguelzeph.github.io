@@ -1,0 +1,1131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>01 - Introduction - Miguel Angelo Do Amaral<br>
+<hr class="custom-hr">
+<span style="color: #8be9fd;">Data Engineer</span><br>
+<span style="color: #50fa7b;">&</span><br>
+<span style="color: #ffb86c;">Python Dev</span><br><br>
+<a href="https://amaralapps.com" target="_blank">🚀<span style="color:rgb(250,100,100);">www.amaralapps.com</span>🚀</a>
+</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <link rel="canonical" href="https://miguelzeph.github.io/documentation/kafka/01_kafka_introduction/">
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../assets/css/darcula-highlight.min.css">
+
+        <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../../../assets/css/mkdocs.min.css">
+            <link href="../../../css/custom.css" rel="stylesheet">
+
+        
+            <link  rel="icon" type="image/x-icon" href="../../../img/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+
+ <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+
+    <div class="p-4">
+        
+            <img class="logo" src="../../../about/img/profile.png" height="150px">
+        
+
+        <div class="drac-text-center">
+            
+                <span class="drac-text drac-line-height drac-text-white">Miguel Angelo Do Amaral<br>
+<hr class="custom-hr">
+<span style="color: #8be9fd;">Data Engineer</span><br>
+<span style="color: #50fa7b;">&</span><br>
+<span style="color: #ffb86c;">Python Dev</span><br><br>
+<a href="https://amaralapps.com" target="_blank">🚀<span style="color:rgb(250,100,100);">www.amaralapps.com</span>🚀</a>
+</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Home
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../about/about/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    👤 About Me
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../skills/skills/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    📚 Skills
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📘-important-concepts-collapse" aria-expanded="false">
+                    📘 Important Concepts
+                </a>
+                <div class="collapse" id="📘-important-concepts-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#👷-data-engineering-collapse" aria-expanded="false">
+            👷 Data Engineering
+        </a>
+
+        <div class="collapse" id="👷-data-engineering-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/01_introduction_data_engineering/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - DE Introduction
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/02_ETL_vs_ELT_part1/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - ETL vs ELT - part 1
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/02_ETL_vs_ELT_part2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - ETL vs ELT - part 2
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/03_warehouse_database_datalake/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Data Warehouse vs Database vs Datalake
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/04_scalability/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Scalability
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#💾-data-basics-collapse" aria-expanded="false">
+            💾 Data Basics
+        </a>
+
+        <div class="collapse" id="💾-data-basics-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/01_data_modeling/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Data Modeling
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/02_data_structures/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Data Structures
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/03_data_types/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Data Types
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/04_data_structured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Data Structured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/05_data_semi_structured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Data Semi-Structured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/06_data_unstructured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            06 - Data Unstructured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/07_data_blending/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            07 - Data Blending
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🌐-api-collapse" aria-expanded="false">
+            🌐 API
+        </a>
+
+        <div class="collapse" id="🌐-api-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/api/01_api_basic/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - API base
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/api/02_api_rest_graphql/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - REST API vs GraphQL API
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/api/03_api_tips_performance/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - API Performance
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class=" active 
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📑-documentation-collapse" aria-expanded="false">
+                    📑 Documentation
+                </a>
+                <div class="collapse" id="📑-documentation-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐍-python-collapse" aria-expanded="false">
+            🐍 Python
+        </a>
+
+        <div class="collapse" id="🐍-python-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../python/01_python_good_starting/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Python Good Starting
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../python/02_python_organize_modules/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Organazing into Modules
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../python/03_configuration_management/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Configuration Management
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../python/04_typing_docstring/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Typing & Docstring
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../python/05_built-in_functions/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Built-in functions
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../python/06_built-in_methods/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            06 - Built-in methods
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐙-version-control-collapse" aria-expanded="false">
+            🐙 Version Control
+        </a>
+
+        <div class="collapse" id="🐙-version-control-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../version_control/01_gitflow/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - GitFlow
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../version_control/02_commands/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Day-to-day commands
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#💻-aws-collapse" aria-expanded="false">
+            💻 AWS
+        </a>
+
+        <div class="collapse" id="💻-aws-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/01_deploy_docker_AWS_EC2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - EC2 Instance - Deploying Docker
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/02_AWS_EC2_domain_http/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - EC2 App - Custom Domain HTTP
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/03_AWS_EC2_domain_https/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - EC2 App - Custom Domain HTTPS
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/04_AWS_EC2_domain_https_streamlit/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - EC2 App - (STREAMLIT) Custom Domain HTTPS
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/05_AWS_workmail_SES/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Workmail & SES
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐳-docker-collapse" aria-expanded="false">
+            🐳 Docker
+        </a>
+
+        <div class="collapse" id="🐳-docker-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../docker/01_docker/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Docker Base
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../docker/02_dockerfile/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - DockerFile Guide
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../docker/03_docker_restart_env_completely/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Restarting Env Completely
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#📩-kafka-collapse" aria-expanded="false">
+            📩 Kafka
+        </a>
+
+        <div class="collapse" id="📩-kafka-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="./"
+            class=" active 
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Introduction
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#💼-projects-collapse" aria-expanded="false">
+                    💼 Projects
+                </a>
+                <div class="collapse" id="💼-projects-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/end-to-end-pipeline-etl/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            End-to-end Pipeline ETL
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/covid_dashboard/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            COVID-19 Data Dashboard
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/amaralapps_webpage/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            AmaralApps Webpage
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/codename/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Codename
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/minute_news/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Minute News
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/data_queue_keeper/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Data Queue Keeper
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/train_your_classifier/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Train Your Classifier
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/airflow_guide/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Airflow Guide
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/document_library/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Doc Lib
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📊-data-career-guide-collapse" aria-expanded="false">
+                    📊 Data Career Guide
+                </a>
+                <div class="collapse" id="📊-data-career-guide-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../data_career_guide/01_Introduction_data_career/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - introduction Data Career
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../../services/services/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    🛠️ Services
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../scientific_articles/scientific_articles/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    🔬 Scientific Articles
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../contact/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    📞 Contact
+                </a>
+            </li>
+        </ul>
+        <!-- endblock -->
+    </div>
+</nav>
+        <!-- endblock -->
+
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href="../../docker/03_docker_restart_env_completely/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../../../projects/end-to-end-pipeline-etl/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                            
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="kafka-minimum-necessary-to-run">Kafka: Minimum Necessary to Run</h1>
+<p>This guide provides a step-by-step approach to setting up and operating <strong>Kafka</strong>, including an overview of its components and practical instructions for managing topics, producing, and consuming messages.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#what-is-kafka">What is Kafka?</a></li>
+<li><a href="#what-is-the-difference-between-kafka-and-rabitmq">What is the difference between Kafka and RabitMQ?</a></li>
+</ul>
+</li>
+<li><a href="#setting-up-kafka">Setting Up Kafka</a><ul>
+<li><a href="#1-start-zookeeper-server">1. Start Zookeeper Server</a></li>
+<li><a href="#2-start-kafka-server">2. Start Kafka Server</a></li>
+<li><a href="#3-execute-docker-compose">3. Execute Docker Compose</a></li>
+</ul>
+</li>
+<li><a href="#basic-kafka-operations">Basic Kafka Operations</a><ul>
+<li><a href="#4-access-kafka-container">4. Access Kafka Container</a></li>
+<li><a href="#5-create-a-topic">5. Create a Topic</a></li>
+<li><a href="#6-produce-messages">6. Produce Messages</a></li>
+<li><a href="#7-consume-messages">7. Consume Messages</a></li>
+</ul>
+</li>
+<li><a href="#graphical-interface">Graphical Interface</a></li>
+<li><a href="#managing-persistent-data">Managing Persistent Data</a><ul>
+<li><a href="#remove-old-volumes">Remove Old Volumes</a></li>
+</ul>
+</li>
+<li><a href="#create-a-custom-consumer">Create a Custom Consumer</a><ul>
+<li><a href="#1-install-required-library">1. Install Required Library</a></li>
+<li><a href="#2-develop-the-consumer">2. Develop the Consumer</a></li>
+<li><a href="#3-add-consumer-to-docker-compose">3. Add Consumer to Docker Compose</a></li>
+</ul>
+</li>
+<li><a href="#testing-and-handling-failures">Testing and Handling Failures</a><ul>
+<li><a href="#stopping-a-broker">Stopping a Broker</a></li>
+<li><a href="#restarting-the-broker">Restarting the Broker</a></li>
+</ul>
+</li>
+<li><a href="#commands-summary">Commands Summary</a></li>
+</ul>
+<hr />
+<h2 id="overview"><strong>Overview</strong></h2>
+<p><a class="glightbox" href="../img/kafka.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../img/kafka.png" alt="Kafka" width="80%"></a></p>
+<hr />
+<h3 id="what-is-kafka">What is Kafka?</h3>
+<p>Kafka is a <code>Distributed Data Streaming Plataform</code> where have loads of different services, so it also can be classified in <strong>sub-groups</strong> as:</p>
+<ul>
+<li><code>Message Broker</code></li>
+<li><code>ETL</code></li>
+<li><code>Log System</code></li>
+<li><code>Temporary Event Storage</code> (data rentention)</li>
+</ul>
+<p>Let's have a look the Kafka architecture</p>
+<h3 id="what-is-the-difference-between-kafka-and-rabitmq">What is the difference between Kafka and RabitMQ?</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Apache Kafka</strong></th>
+<th><strong>RabbitMQ</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>Kafka uses a partitioned log model, combining message queue and publish-subscribe approaches.</td>
+<td>RabbitMQ uses a message queue model.</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Kafka scales by allowing partitions to be distributed across different servers.</td>
+<td>Scale by increasing the number of consumers in the queue to distribute processing among concurrent consumers.</td>
+</tr>
+<tr>
+<td><strong>Message Retention</strong></td>
+<td>Based on policies, for example, messages can be stored for one day. The retention window can be configured by the user.</td>
+<td>Based on acknowledgment, meaning messages are deleted as they are consumed.</td>
+</tr>
+<tr>
+<td><strong>Multiple Consumers</strong></td>
+<td>Multiple consumers can subscribe to the same topic, as Kafka allows the same message to be replayed for a certain period.</td>
+<td>Not possible for multiple consumers to receive the same message, as messages are removed once consumed.</td>
+</tr>
+<tr>
+<td><strong>Replication</strong></td>
+<td>Topics are replicated automatically, but users can manually configure topics to not be replicated.</td>
+<td>Messages are not replicated automatically, but users can manually configure replication.</td>
+</tr>
+<tr>
+<td><strong>Message Ordering</strong></td>
+<td>Each consumer receives messages in order due to the partitioned log architecture.</td>
+<td>Messages are delivered to consumers in the order they arrive in the queue. If there are concurrent consumers, each consumer will process a subset of those messages.</td>
+</tr>
+<tr>
+<td><strong>Protocols</strong></td>
+<td>Kafka uses a binary protocol over TCP.</td>
+<td>Advanced Message Queuing Protocol (AMQP) with support via plugins: MQTT, STOMP.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<ol>
+<li>
+<p><strong>CLUSTER (Scalability):</strong></p>
+<ul>
+<li>Manages a group of <code>BROKERS</code> in Kafka.</li>
+<li>Can use <strong>Zookeeper</strong> or Kafka's built-in capabilities for cluster management.</li>
+</ul>
+</li>
+<li>
+<p><strong>BROKER (Storage/Message Management):</strong></p>
+<ul>
+<li>Recive messages from <code>PRODUCER</code></li>
+<li>A Kafka server that <code>stores messages</code> and <code>manages TOPICS</code>.  </li>
+<li>Distributes messages to <code>CONSUMERS</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>TOPIC (Organization):</strong>  </p>
+<ul>
+<li>A named channel for <code>organizing</code> and <code>storing</code> messages.  </li>
+</ul>
+</li>
+<li>
+<p><strong>CONSUMER (Transforme/Processing):</strong>  </p>
+<ul>
+<li><code>Reads</code> messages from <code>TOPICS</code> and <strong>processes/transform</strong> them, possibly forwarding data to other systems.</li>
+</ul>
+</li>
+<li>
+<p><strong>PRODUCER (Create messages/Sending):</strong>  </p>
+<ul>
+<li><code>Sends</code> messages to <code>TOPICS</code>.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<p>P.S:</p>
+<ul>
+<li><strong>Zookeeper:</strong></li>
+<li>Assigns an <strong>Active Control Broker (AC)</strong> to manage tasks like topic creation, partition management, and leader redistribution.  </li>
+<li>
+<p>Automatically reassigns roles in case of broker failures.</p>
+</li>
+<li>
+<p><strong>Offset:</strong>  </p>
+<ul>
+<li>A unique identifier for each message within a topic.</li>
+</ul>
+</li>
+</ul>
+<p>In summary: The <strong>PRODUCER</strong> <code>sends</code> messages to a <strong>TOPIC</strong>, the <strong>BROKER</strong> <code>manages the topics</code> and <code>retains</code> the messages for a period of time, the <strong>CLUSTER</strong> <code>manages the brokers</code>, and the <strong>CONSUMER</strong> <code>pulls</code> the data from the <strong>TOPIC</strong>, then performs <code>transformations</code> and/or <code>sends the data to another system or database</code>.</p>
+<hr />
+<h2 id="setting-up-kafka"><strong>Setting Up Kafka</strong></h2>
+<h4 id="1-start-zookeeper-server"><strong>1. Start Zookeeper Server</strong></h4>
+<ul>
+<li>Use the official Docker image for Zookeeper:  </li>
+<li><a href="https://hub.docker.com/_/zookeeper">Zookeeper Docker Hub</a>  </li>
+<li>Image name: <code>zookeeper</code></li>
+</ul>
+<h4 id="2-start-kafka-server"><strong>2. Start Kafka Server</strong></h4>
+<ul>
+<li>Use the recommended Kafka Docker image:  </li>
+<li><code>apache/kafka</code></li>
+</ul>
+<h4 id="3-execute-docker-compose"><strong>3. Execute <code>docker-compose</code></strong></h4>
+<ul>
+<li>Start the services using:
+  <code>bash
+  sudo docker-compose up --build</code></li>
+<li><code>--build</code>: Ensures images are rebuilt.</li>
+</ul>
+<p>Example of <strong>docker-compose.yml</strong> file</p>
+<pre><code class="language-yml">version: '3'
+
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    ports:
+      - &quot;2181:2181&quot;
+
+  #----------------------------------------- BROKERS --------------------------------
+  # Broker 1
+  kafka:
+    image: wurstmeister/kafka
+    container_name: kafka
+    ports:
+      - &quot;9092:9092&quot;
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_LOG_RETENTION_HOURS: 168
+
+  # Broker 2
+  kafka-broker-2:
+    image: wurstmeister/kafka
+    container_name: kafka-broker-2
+    ports:
+      - &quot;9093:9092&quot;
+    environment:
+      KAFKA_BROKER_ID: 2
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-broker-2:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_LOG_RETENTION_HOURS: 168
+
+  #----------------------------------------- CONSUMERS --------------------------------
+  # Consumer 1
+  consumer-process-articles:
+    build:
+      context: .
+      dockerfile: Dockerfile_python
+    container_name: consumer-articles
+    command: python consumer_articles.py
+    depends_on:
+      - kafka
+      - kafka-broker-2
+
+  # Consumer 2
+  consumer-send-message-to-topic:
+    build:
+      context: .
+      dockerfile: Dockerfile_python
+    container_name: consumer-send-message-to-topic
+    command: python consumer_send_message_to_topic.py
+    depends_on:
+      - kafka
+      - kafka-broker-2
+
+  #------------------------------------- GRAPHICAL INTERFACE ---------------------------
+  kafka-ui:
+    image: provectuslabs/kafka-ui
+    container_name: kafka-ui
+    ports:
+      - &quot;8080:8080&quot;
+    depends_on:
+      - kafka
+      - kafka-broker-2
+      - zookeeper
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAP_SERVERS: kafka:9092,kafka-broker-2:9093
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+
+</code></pre>
+<p>DOCKERFILE_PYTHON (Consumer), example:</p>
+<pre><code class="language-yml">FROM python:3.9-slim
+
+# Install necessary dependencies
+RUN pip install confluent-kafka
+
+# Copy the scripts to the container in the correct folder
+COPY ./consumers /app/consumers
+
+# Working directory
+WORKDIR /app/consumers
+
+
+</code></pre>
+<hr />
+<h2 id="basic-kafka-operations"><strong>Basic Kafka Operations</strong></h2>
+<h4 id="4-access-kafka-container"><strong>4. Access Kafka Container</strong></h4>
+<ul>
+<li>Enter the Kafka container:</li>
+</ul>
+<pre><code class="language-bash">sudo docker exec -it kafka /bin/sh
+</code></pre>
+<ul>
+<li>Navigate to Kafka scripts directory:</li>
+</ul>
+<pre><code class="language-bash">cd /opt/kafka_2.13-2.8.1/bin/
+</code></pre>
+<ul>
+<li>Use <code>find</code> to locate scripts if needed:</li>
+</ul>
+<pre><code class="language-bash">find / -name &quot;kafka-topics.sh&quot;
+</code></pre>
+<h4 id="5-create-a-topic"><strong>5. Create a Topic</strong></h4>
+<ul>
+<li>Command:</li>
+</ul>
+<pre><code class="language-bash">kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic helloworld
+</code></pre>
+<p><strong>Explanation of Parameters:</strong>
+  - <code>--bootstrap-server</code>: Kafka server address.
+  - <code>--replication-factor</code>: Number of replicas (1 for single broker setup).
+  - <code>--partitions</code>: Number of partitions for the topic.
+  - <code>--topic</code>: Name of the topic.</p>
+<h4 id="6-produce-messages"><strong>6. Produce Messages</strong></h4>
+<ul>
+<li>
+<p><strong>Send Simple Messages</strong></p>
+</li>
+<li>
+<p>Command:</p>
+</li>
+</ul>
+<pre><code class="language-bash">kafka-console-producer.sh --topic helloworld --bootstrap-server localhost:9092
+</code></pre>
+<ul>
+<li>
+<p>Type messages and press ENTER to send.</p>
+</li>
+<li>
+<p><strong>Send Key-Value Messages</strong></p>
+</li>
+<li>Command:</li>
+</ul>
+<pre><code class="language-bash">kafka-console-producer.sh --topic helloworld --bootstrap-server localhost:9092 --property parse.key=true --property key.separator=:
+</code></pre>
+<ul>
+<li>Example format:</li>
+</ul>
+<pre><code class="language-text">key1:{&quot;title&quot;:&quot;Message Title&quot;,&quot;content&quot;:&quot;Message Content&quot;}
+</code></pre>
+<h4 id="7-consume-messages"><strong>7. Consume Messages</strong></h4>
+<ul>
+<li>Command:</li>
+</ul>
+<pre><code class="language-bash">kafka-console-consumer.sh --topic helloworld --bootstrap-server localhost:9092 --from-beginning
+</code></pre>
+<p><strong>Explanation:</strong>
+  - <code>--from-beginning</code>: Reads all messages from the topic's start.</p>
+<hr />
+<h2 id="graphical-interface"><strong>Graphical Interface</strong></h2>
+<ul>
+<li>Access Kafka's UI in the browser:  </li>
+<li>Navigate to <code>localhost:8080</code>.</li>
+</ul>
+<hr />
+<h2 id="managing-persistent-data"><strong>Managing Persistent Data</strong></h2>
+<h3 id="remove-old-volumes"><strong>Remove Old Volumes</strong></h3>
+<ul>
+<li>Clear existing volumes to prevent data conflicts:
+  <code>bash
+  docker-compose down --volumes</code></li>
+</ul>
+<hr />
+<h2 id="create-a-custom-consumer"><strong>Create a Custom Consumer</strong></h2>
+<h4 id="1-install-required-library"><strong>1. Install Required Library</strong></h4>
+<ul>
+<li>Use the <code>confluent-kafka</code> library:
+  <code>bash
+  pip install confluent-kafka</code></li>
+</ul>
+<h4 id="2-develop-the-consumer"><strong>2. Develop the Consumer</strong></h4>
+<ul>
+<li>Write a Python script to act as a custom consumer.</li>
+</ul>
+<h4 id="3-add-consumer-to-docker-compose"><strong>3. Add Consumer to Docker Compose</strong></h4>
+<ul>
+<li>Integrate the consumer into the <code>docker-compose.yml</code> file and start the service.</li>
+</ul>
+<hr />
+<h2 id="testing-and-handling-failures"><strong>Testing and Handling Failures</strong></h2>
+<h3 id="stopping-a-broker"><strong>Stopping a Broker</strong></h3>
+<ul>
+<li>Simulate a broker failure:
+  <code>bash
+  sudo docker-compose stop kafka-broker-2</code></li>
+<li>Observe message behavior.</li>
+</ul>
+<h3 id="restarting-the-broker"><strong>Restarting the Broker</strong></h3>
+<ul>
+<li>Restart the stopped broker:
+  <code>bash
+  sudo docker-compose up kafka-broker-2</code></li>
+</ul>
+<hr />
+<h2 id="commands-summary"><strong>Commands Summary</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Command</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kafka-topics.sh --create</code></td>
+<td>Create a new topic.</td>
+</tr>
+<tr>
+<td><code>kafka-console-producer.sh</code></td>
+<td>Send messages to a topic.</td>
+</tr>
+<tr>
+<td><code>kafka-console-consumer.sh</code></td>
+<td>Consume messages from a topic.</td>
+</tr>
+<tr>
+<td><code>docker-compose up --build</code></td>
+<td>Start services with Docker Compose.</td>
+</tr>
+<tr>
+<td><code>docker-compose down --volumes</code></td>
+<td>Remove services and associated volumes.</td>
+</tr>
+<tr>
+<td><code>sudo docker exec -it kafka</code></td>
+<td>Access Kafka container shell.</td>
+</tr>
+</tbody>
+</table></p>
+    </article>
+</section>
+            <!-- endblock -->
+
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
+    </div>
+</footer>
+            <!-- endblock -->
+        </div>
+
+    </main>
+
+        <script>var base_url = '../../..';</script>
+        <script src="../../../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../assets/js/mkdocs.js"></script>
+			<script src="../../../js/custom.js" defer></script>
+			<script src="https://www.googletagmanager.com/gtag/js?id=G-MV51GYN8DB" defer></script>
+			<script src="../../../js/analytics.js" defer></script>
+			<script src="../../../js/inject_search.js" defer></script>
+			<script src="../../../js/inject_adsense.js" defer></script>
+			<script src="../../../search/main.js" defer></script>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
+
+</html>

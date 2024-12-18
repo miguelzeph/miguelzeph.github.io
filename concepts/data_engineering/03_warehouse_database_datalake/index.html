@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>03 - Data Warehouse vs Database vs Datalake - Miguel Angelo Do Amaral<br>
+<hr class="custom-hr">
+<span style="color: #8be9fd;">Data Engineer</span><br>
+<span style="color: #50fa7b;">&</span><br>
+<span style="color: #ffb86c;">Python Dev</span><br><br>
+<a href="https://amaralapps.com" target="_blank">🚀<span style="color:rgb(250,100,100);">www.amaralapps.com</span>🚀</a>
+</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <link rel="canonical" href="https://miguelzeph.github.io/concepts/data_engineering/03_warehouse_database_datalake/">
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../assets/css/darcula-highlight.min.css">
+
+        <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../../../assets/css/mkdocs.min.css">
+            <link href="../../../css/custom.css" rel="stylesheet">
+
+        
+            <link  rel="icon" type="image/x-icon" href="../../../img/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+
+ <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+
+    <div class="p-4">
+        
+            <img class="logo" src="../../../about/img/profile.png" height="150px">
+        
+
+        <div class="drac-text-center">
+            
+                <span class="drac-text drac-line-height drac-text-white">Miguel Angelo Do Amaral<br>
+<hr class="custom-hr">
+<span style="color: #8be9fd;">Data Engineer</span><br>
+<span style="color: #50fa7b;">&</span><br>
+<span style="color: #ffb86c;">Python Dev</span><br><br>
+<a href="https://amaralapps.com" target="_blank">🚀<span style="color:rgb(250,100,100);">www.amaralapps.com</span>🚀</a>
+</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Home
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../about/about/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    👤 About Me
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../skills/skills/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    📚 Skills
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class=" active 
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📘-important-concepts-collapse" aria-expanded="false">
+                    📘 Important Concepts
+                </a>
+                <div class="collapse" id="📘-important-concepts-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#👷-data-engineering-collapse" aria-expanded="false">
+            👷 Data Engineering
+        </a>
+
+        <div class="collapse" id="👷-data-engineering-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../01_introduction_data_engineering/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - DE Introduction
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../02_ETL_vs_ELT_part1/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - ETL vs ELT - part 1
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../02_ETL_vs_ELT_part2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - ETL vs ELT - part 2
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="./"
+            class=" active 
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Data Warehouse vs Database vs Datalake
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../04_scalability/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Scalability
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#💾-data-basics-collapse" aria-expanded="false">
+            💾 Data Basics
+        </a>
+
+        <div class="collapse" id="💾-data-basics-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/01_data_modeling/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Data Modeling
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/02_data_structures/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Data Structures
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/03_data_types/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Data Types
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/04_data_structured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Data Structured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/05_data_semi_structured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Data Semi-Structured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/06_data_unstructured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            06 - Data Unstructured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/07_data_blending/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            07 - Data Blending
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🌐-api-collapse" aria-expanded="false">
+            🌐 API
+        </a>
+
+        <div class="collapse" id="🌐-api-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../api/01_api_basic/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - API base
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../api/02_api_rest_graphql/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - REST API vs GraphQL API
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../api/03_api_tips_performance/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - API Performance
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📑-documentation-collapse" aria-expanded="false">
+                    📑 Documentation
+                </a>
+                <div class="collapse" id="📑-documentation-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐍-python-collapse" aria-expanded="false">
+            🐍 Python
+        </a>
+
+        <div class="collapse" id="🐍-python-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/python/01_python_good_starting/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Python Good Starting
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/python/02_python_organize_modules/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Organazing into Modules
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/python/03_configuration_management/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Configuration Management
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/python/04_typing_docstring/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Typing & Docstring
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/python/05_built-in_functions/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Built-in functions
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/python/06_built-in_methods/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            06 - Built-in methods
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐙-version-control-collapse" aria-expanded="false">
+            🐙 Version Control
+        </a>
+
+        <div class="collapse" id="🐙-version-control-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/version_control/01_gitflow/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - GitFlow
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/version_control/02_commands/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Day-to-day commands
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#💻-aws-collapse" aria-expanded="false">
+            💻 AWS
+        </a>
+
+        <div class="collapse" id="💻-aws-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/aws/01_deploy_docker_AWS_EC2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - EC2 Instance - Deploying Docker
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/aws/02_AWS_EC2_domain_http/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - EC2 App - Custom Domain HTTP
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/aws/03_AWS_EC2_domain_https/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - EC2 App - Custom Domain HTTPS
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/aws/04_AWS_EC2_domain_https_streamlit/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - EC2 App - (STREAMLIT) Custom Domain HTTPS
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/aws/05_AWS_workmail_SES/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Workmail & SES
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐳-docker-collapse" aria-expanded="false">
+            🐳 Docker
+        </a>
+
+        <div class="collapse" id="🐳-docker-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/docker/01_docker/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Docker Base
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/docker/02_dockerfile/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - DockerFile Guide
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/docker/03_docker_restart_env_completely/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Restarting Env Completely
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#📩-kafka-collapse" aria-expanded="false">
+            📩 Kafka
+        </a>
+
+        <div class="collapse" id="📩-kafka-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/kafka/01_kafka_introduction/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Introduction
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#💼-projects-collapse" aria-expanded="false">
+                    💼 Projects
+                </a>
+                <div class="collapse" id="💼-projects-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/end-to-end-pipeline-etl/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            End-to-end Pipeline ETL
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/covid_dashboard/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            COVID-19 Data Dashboard
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/amaralapps_webpage/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            AmaralApps Webpage
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/codename/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Codename
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/minute_news/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Minute News
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/data_queue_keeper/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Data Queue Keeper
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/train_your_classifier/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Train Your Classifier
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/airflow_guide/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Airflow Guide
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/document_library/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Doc Lib
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📊-data-career-guide-collapse" aria-expanded="false">
+                    📊 Data Career Guide
+                </a>
+                <div class="collapse" id="📊-data-career-guide-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../data_career_guide/01_Introduction_data_career/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - introduction Data Career
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../../services/services/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    🛠️ Services
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../scientific_articles/scientific_articles/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    🔬 Scientific Articles
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../contact/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    📞 Contact
+                </a>
+            </li>
+        </ul>
+        <!-- endblock -->
+    </div>
+</nav>
+        <!-- endblock -->
+
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href="../02_ETL_vs_ELT_part2/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../04_scalability/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                            
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="3-data-warehouse-vs-database-vs-data-lake">3. Data Warehouse vs. Database vs. Data Lake</h1>
+<h2 id="overview">Overview</h2>
+<p>Data Warehouses, Databases, and Data Lakes each serve as storage solutions, but they cater to different data management needs within an organization:</p>
+<ul>
+<li><strong>Data Lake</strong>: Optimized for storing <strong>unstructured</strong> and <strong>semi-structured data</strong>, often in its raw form, supporting large-scale data exploration, machine learning, and advanced analytics.</li>
+<li><strong>Data Warehouse</strong>: Primarily focused on <strong>structured data</strong>, optimized for <strong>ELT</strong> processes where data transformations occur to enable business intelligence (BI) and decision-making. Tools like <strong>Snowflake</strong> are examples.</li>
+<li><strong>Database</strong>: Used for <strong>structured data</strong>/<strong>semi-structured data</strong> (e.g., JSON in NoSQL databases). Databases are designed for fast retrieval and updating of transactional data, better for <strong>ETL</strong></li>
+</ul>
+<hr />
+<p>Tips:</p>
+<ul>
+<li>ETL is related to Database, because the transformation come before loading.</li>
+<li>ELT is related to DataWarehouse, because the transformation occours after loading (for example, snowflake makes the transformation for your inside the plataform).</li>
+<li><strong>Structured data</strong>, is everything that fit well in a <code>TABLE</code> - RELATIONAL (<code>SQL</code>).</li>
+<li><strong>Semi-Structured data</strong>, is everthing that fit well in a <code>DOCUMENT</code> - NO RELATIONAL (<code>NoSQL</code>).</li>
+<li><strong>Unstructured data</strong>, is a <code>file, for instance, video, images, text file, audio file</code> etc.</li>
+<li>If you think about RAW data<ul>
+<li>it is related to <strong>DataLake</strong>, because the data haven't had any kind of <strong>TRANSFORMATION</strong></li>
+<li>it also is related to <strong>DataWarehouse</strong>, because even after the <strong>TRANSFORMATION (ELT)</strong> the <strong>raw data</strong> are also storage in the Plataform.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="key-differences">Key Differences</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Data Lake</th>
+<th>Data Warehouse</th>
+<th>Database</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Storing raw, <code>unstructured</code>, and <code>semi-structured</code> data for analysis</td>
+<td>Analysis and historical data storage through <strong>ELT</strong> processes</td>
+<td>Real-time data storage and retrieval</td>
+</tr>
+<tr>
+<td><strong>Processing</strong></td>
+<td>Supports batch processing and big data analytics</td>
+<td>OLAP (Online Analytical Processing)</td>
+<td>OLTP (Online Transactional Processing)</td>
+</tr>
+<tr>
+<td><strong>Data Structure</strong></td>
+<td>Schema-on-read, stores data in raw format</td>
+<td>Subject-oriented, often star or snowflake schemas</td>
+<td>Application-oriented, typically relational</td>
+</tr>
+<tr>
+<td><strong>Query Types</strong></td>
+<td>Allows ad-hoc and advanced analytical queries</td>
+<td>Complex analytical queries</td>
+<td>Simple transaction queries</td>
+</tr>
+<tr>
+<td><strong>Data Types</strong></td>
+<td><code>Unstructured</code> and <code>semi-structured</code></td>
+<td><code>Structured</code> historical data</td>
+<td>Primarily <code>structured</code>; some can handle <code>semi-structured data</code></td>
+</tr>
+<tr>
+<td><strong>Data Storage</strong></td>
+<td>Highly scalable, designed for big data and cloud environments</td>
+<td>Stored in a highly organized, optimized structure</td>
+<td>Organized for quick access by applications</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Designed for storing massive volumes of data, typically in cloud</td>
+<td>Scales based on analytical needs</td>
+<td>Scales according to application demands</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-is-a-data-lake">What is a Data Lake?</h2>
+<p>A <strong>Data Lake</strong> is a centralized repository optimized for storing <strong>unstructured</strong> and <strong>semi-structured</strong> data in its native, unprocessed format. It is a highly scalable solution, ideal for data exploration, machine learning, and advanced analytics. Examples include <strong>AWS S3 buckets</strong> which store raw data without requiring it to be structured or transformed beforehand.</p>
+<h3 id="key-features-of-a-data-lake">Key Features of a Data Lake</h3>
+<ul>
+<li><strong>Scalability</strong>: Designed to handle massive data volumes, often in a cloud environment.</li>
+<li><strong>Data Variety</strong>: Stores structured, semi-structured, and unstructured data (e.g., text, images, sensor data).</li>
+<li><strong>Schema-on-Read</strong>: Applies schemas when data is read, allowing for flexibility in analysis.</li>
+<li><strong>Data Exploration</strong>: Useful for data scientists and analysts to explore data for insights.</li>
+<li><strong>Machine Learning and AI</strong>: Often used for big data analytics, machine learning, and AI model training.</li>
+</ul>
+<h3 id="examples-of-data-lake-solutions">Examples of Data Lake Solutions</h3>
+<ul>
+<li><strong>Amazon S3 with AWS Lake Formation</strong>: AWS service to build and manage Data Lakes.</li>
+<li><strong>Azure Data Lake Storage</strong>: A highly scalable storage service on Microsoft Azure.</li>
+<li><strong>Google Cloud Storage</strong>: Supports big data storage with integration for analytics and machine learning.</li>
+<li><strong>Apache Hadoop HDFS</strong>: Open-source solution for large-scale data storage and processing.</li>
+</ul>
+<h2 id="what-is-a-data-warehouse">What is a Data Warehouse?</h2>
+<p>A <strong>Data Warehouse</strong> is a centralized repository optimized for storing <strong>structured data</strong>, typically involving <strong>ETL/ELT</strong> processes. Data is cleansed, transformed, and integrated from multiple sources to enable business intelligence (BI) and decision-making. <strong>Snowflake</strong> and other solutions support these processes, enabling data to be prepared and optimized for analytical queries.</p>
+<h3 id="key-features-of-a-data-warehouse">Key Features of a Data Warehouse</h3>
+<ul>
+<li><strong>Historical Data Storage</strong>: Consolidates historical data from various sources over time.</li>
+<li><strong>Data Transformation</strong>: Processes data for structured analysis.</li>
+<li><strong>Business Intelligence Support</strong>: Enables complex analytical queries and reporting.</li>
+<li><strong>Data Integration</strong>: Combines data from multiple sources for a unified view.</li>
+<li><strong>Decision Support</strong>: Assists in trend analysis and data-driven decision-making.</li>
+</ul>
+<h3 id="examples-of-data-warehouse-solutions">Examples of Data Warehouse Solutions</h3>
+<ul>
+<li><strong>Amazon Redshift</strong>: Fully managed on AWS, supports SQL queries.</li>
+<li><strong>Google BigQuery</strong>: Serverless and scalable, designed for big data analysis.</li>
+<li><strong>Snowflake</strong>: Cloud-based, with separate scalable storage and compute resources.</li>
+<li><strong>Microsoft Azure Synapse</strong>: Integrated with Azure for big data and data warehousing.</li>
+</ul>
+<h2 id="what-is-a-database">What is a Database?</h2>
+<p>A <strong>Database</strong> is a system designed primarily for storing and retrieving <strong>structured data</strong>, though some databases (like NoSQL) can handle <strong>semi-structured data</strong> such as JSON documents. Databases are crucial for transactional operations, ensuring fast data access and update capabilities for real-time applications.</p>
+<h3 id="key-features-of-a-database">Key Features of a Database</h3>
+<ul>
+<li><strong>Transactional Processing</strong>: Manages real-time data transactions, such as in e-commerce or CRM.</li>
+<li><strong>Data Storage</strong>: Organized in tables for structured data retrieval.</li>
+<li><strong>Real-time Queries</strong>: Supports high-speed read and write operations.</li>
+<li><strong>Consistency</strong>: Ensures data accuracy and reliability in transactions.</li>
+</ul>
+<h3 id="types-of-databases">Types of Databases</h3>
+<ul>
+<li><strong>Relational Databases (SQL)</strong>: Store data in structured tables (e.g., MySQL, PostgreSQL).</li>
+<li><strong>NoSQL Databases</strong>: Handle large volumes of semi-structured data, offering flexibility (e.g., MongoDB, Cassandra).</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="data-lake-use-cases">Data Lake Use Cases</h3>
+<ul>
+<li><strong>IoT Data</strong>: Storing and processing sensor data in raw format for analysis.</li>
+<li><strong>Machine Learning</strong>: Aggregating large volumes of training data for AI and ML models.</li>
+<li><strong>Data Exploration</strong>: Flexible storage for exploratory analysis, enabling data scientists to uncover insights.</li>
+</ul>
+<h3 id="data-warehouse-use-cases">Data Warehouse Use Cases</h3>
+<ul>
+<li><strong>Healthcare</strong>: Analyzing patient data to support treatment decisions.</li>
+<li><strong>Marketing</strong>: Tracking campaign performance and customer interactions over time.</li>
+<li><strong>Finance</strong>: Analyzing historical financial data for forecasting and trend analysis.</li>
+</ul>
+<h3 id="database-use-cases">Database Use Cases</h3>
+<ul>
+<li><strong>Retail</strong>: Managing real-time inventory and order transactions.</li>
+<li><strong>CRM Systems</strong>: Storing and accessing customer information quickly for sales and support.</li>
+<li><strong>Banking</strong>: Processing real-time transactions with data consistency and security.</li>
+</ul>
+<h2 id="data-management-professionals">Data Management Professionals</h2>
+<ul>
+<li><strong>Data Lake Engineer</strong>: Manages and maintains the Data Lake infrastructure, ensuring efficient storage and retrieval of raw data.</li>
+<li><strong>Data Warehouse Analyst</strong>: Analyzes data and evaluates systems to recommend improvements for better insights.</li>
+<li><strong>BI Analyst</strong>: Develops insights through data visualization and reporting, primarily from structured data.</li>
+<li><strong>Database Administrator</strong>: Manages databases, ensuring data integrity, security, and performance.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p><strong>Data Lakes</strong>, <strong>Data Warehouses</strong>, and <strong>Databases</strong> serve distinct roles in data management:</p>
+<ul>
+<li><strong>Data Lake</strong>: Best for storing and exploring raw data for machine learning, big data analytics, and flexible data exploration.</li>
+<li><strong>Data Warehouse</strong>: Best for structured historical data analysis, supporting business intelligence and strategic decision-making through <strong>ETL/ELT</strong> processes.</li>
+<li><strong>Database</strong>: Best for real-time data storage and quick transactional operations, essential for applications requiring consistent, <strong>structured data</strong>.</li>
+</ul>
+<p>Organizations often leverage a combination of these solutions to meet comprehensive data management and analysis needs.</p></p>
+    </article>
+</section>
+            <!-- endblock -->
+
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
+    </div>
+</footer>
+            <!-- endblock -->
+        </div>
+
+    </main>
+
+        <script>var base_url = '../../..';</script>
+        <script src="../../../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../assets/js/mkdocs.js"></script>
+			<script src="../../../js/custom.js" defer></script>
+			<script src="https://www.googletagmanager.com/gtag/js?id=G-MV51GYN8DB" defer></script>
+			<script src="../../../js/analytics.js" defer></script>
+			<script src="../../../js/inject_search.js" defer></script>
+			<script src="../../../js/inject_adsense.js" defer></script>
+			<script src="../../../search/main.js" defer></script>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
+
+</html>

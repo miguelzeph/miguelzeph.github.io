@@ -1,0 +1,1309 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>05 - Built-in functions - Miguel Angelo Do Amaral<br>
+<hr class="custom-hr">
+<span style="color: #8be9fd;">Data Engineer</span><br>
+<span style="color: #50fa7b;">&</span><br>
+<span style="color: #ffb86c;">Python Dev</span><br><br>
+<a href="https://amaralapps.com" target="_blank">🚀<span style="color:rgb(250,100,100);">www.amaralapps.com</span>🚀</a>
+</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <link rel="canonical" href="https://miguelzeph.github.io/documentation/python/05_built-in_functions/">
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../assets/css/darcula-highlight.min.css">
+
+        <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../../../assets/css/mkdocs.min.css">
+            <link href="../../../css/custom.css" rel="stylesheet">
+
+        
+            <link  rel="icon" type="image/x-icon" href="../../../img/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+
+ <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+
+    <div class="p-4">
+        
+            <img class="logo" src="../../../about/img/profile.png" height="150px">
+        
+
+        <div class="drac-text-center">
+            
+                <span class="drac-text drac-line-height drac-text-white">Miguel Angelo Do Amaral<br>
+<hr class="custom-hr">
+<span style="color: #8be9fd;">Data Engineer</span><br>
+<span style="color: #50fa7b;">&</span><br>
+<span style="color: #ffb86c;">Python Dev</span><br><br>
+<a href="https://amaralapps.com" target="_blank">🚀<span style="color:rgb(250,100,100);">www.amaralapps.com</span>🚀</a>
+</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Home
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../about/about/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    👤 About Me
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../skills/skills/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    📚 Skills
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📘-important-concepts-collapse" aria-expanded="false">
+                    📘 Important Concepts
+                </a>
+                <div class="collapse" id="📘-important-concepts-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#👷-data-engineering-collapse" aria-expanded="false">
+            👷 Data Engineering
+        </a>
+
+        <div class="collapse" id="👷-data-engineering-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/01_introduction_data_engineering/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - DE Introduction
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/02_ETL_vs_ELT_part1/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - ETL vs ELT - part 1
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/02_ETL_vs_ELT_part2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - ETL vs ELT - part 2
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/03_warehouse_database_datalake/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Data Warehouse vs Database vs Datalake
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data_engineering/04_scalability/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Scalability
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#💾-data-basics-collapse" aria-expanded="false">
+            💾 Data Basics
+        </a>
+
+        <div class="collapse" id="💾-data-basics-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/01_data_modeling/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Data Modeling
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/02_data_structures/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Data Structures
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/03_data_types/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Data Types
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/04_data_structured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Data Structured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/05_data_semi_structured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Data Semi-Structured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/06_data_unstructured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            06 - Data Unstructured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/data/07_data_blending/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            07 - Data Blending
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🌐-api-collapse" aria-expanded="false">
+            🌐 API
+        </a>
+
+        <div class="collapse" id="🌐-api-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/api/01_api_basic/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - API base
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/api/02_api_rest_graphql/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - REST API vs GraphQL API
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../concepts/api/03_api_tips_performance/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - API Performance
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class=" active 
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📑-documentation-collapse" aria-expanded="false">
+                    📑 Documentation
+                </a>
+                <div class="collapse" id="📑-documentation-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐍-python-collapse" aria-expanded="false">
+            🐍 Python
+        </a>
+
+        <div class="collapse" id="🐍-python-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../01_python_good_starting/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Python Good Starting
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../02_python_organize_modules/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Organazing into Modules
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../03_configuration_management/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Configuration Management
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../04_typing_docstring/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Typing & Docstring
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="./"
+            class=" active 
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Built-in functions
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../06_built-in_methods/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            06 - Built-in methods
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐙-version-control-collapse" aria-expanded="false">
+            🐙 Version Control
+        </a>
+
+        <div class="collapse" id="🐙-version-control-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../version_control/01_gitflow/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - GitFlow
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../version_control/02_commands/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Day-to-day commands
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#💻-aws-collapse" aria-expanded="false">
+            💻 AWS
+        </a>
+
+        <div class="collapse" id="💻-aws-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/01_deploy_docker_AWS_EC2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - EC2 Instance - Deploying Docker
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/02_AWS_EC2_domain_http/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - EC2 App - Custom Domain HTTP
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/03_AWS_EC2_domain_https/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - EC2 App - Custom Domain HTTPS
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/04_AWS_EC2_domain_https_streamlit/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - EC2 App - (STREAMLIT) Custom Domain HTTPS
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../aws/05_AWS_workmail_SES/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Workmail & SES
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐳-docker-collapse" aria-expanded="false">
+            🐳 Docker
+        </a>
+
+        <div class="collapse" id="🐳-docker-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../docker/01_docker/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Docker Base
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../docker/02_dockerfile/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - DockerFile Guide
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../docker/03_docker_restart_env_completely/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Restarting Env Completely
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#📩-kafka-collapse" aria-expanded="false">
+            📩 Kafka
+        </a>
+
+        <div class="collapse" id="📩-kafka-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../kafka/01_kafka_introduction/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Introduction
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#💼-projects-collapse" aria-expanded="false">
+                    💼 Projects
+                </a>
+                <div class="collapse" id="💼-projects-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/end-to-end-pipeline-etl/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            End-to-end Pipeline ETL
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/covid_dashboard/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            COVID-19 Data Dashboard
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/amaralapps_webpage/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            AmaralApps Webpage
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/codename/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Codename
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/minute_news/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Minute News
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/data_queue_keeper/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Data Queue Keeper
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/train_your_classifier/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Train Your Classifier
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/airflow_guide/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Airflow Guide
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/document_library/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Doc Lib
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📊-data-career-guide-collapse" aria-expanded="false">
+                    📊 Data Career Guide
+                </a>
+                <div class="collapse" id="📊-data-career-guide-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../data_career_guide/01_Introduction_data_career/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - introduction Data Career
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../../services/services/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    🛠️ Services
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../scientific_articles/scientific_articles/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    🔬 Scientific Articles
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../contact/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    📞 Contact
+                </a>
+            </li>
+        </ul>
+        <!-- endblock -->
+    </div>
+</nav>
+        <!-- endblock -->
+
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href="../04_typing_docstring/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../06_built-in_methods/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                            
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="05-python-built-in-functions">05 - Python Built-in Functions</h1>
+<h2 id="overview">Overview</h2>
+<p>Python, a versatile and widely-used programming language, comes equipped with a robust set of built-in functions. These functions are an essential part of Python, as they allow developers to perform common tasks efficiently without the need to import additional libraries. As of Python 3.11, there are approximately 70 built-in functions available. Understanding these functions is crucial for any Python programmer, as they form the foundation for more complex coding tasks and help in writing concise, readable, and efficient code.</p>
+<h3 id="importance-of-understanding-built-in-functions">Importance of Understanding Built-in Functions</h3>
+<ol>
+<li><strong>Efficiency</strong>: Built-in functions are optimized and written in C, making them faster than custom implementations.</li>
+<li><strong>Readability</strong>: Using built-in functions makes code more readable and easier to understand, as they are widely recognized by the Python community.</li>
+<li><strong>Maintainability</strong>: Code that relies on built-in functions is often easier to maintain and update.</li>
+<li><strong>Reduced Complexity</strong>: By leveraging these functions, you can minimize the complexity of your code, focusing more on solving the problem rather than reinventing the wheel.</li>
+</ol>
+<hr />
+<h2 id="categories-of-built-in-functions">Categories of Built-in Functions</h2>
+<h3 id="1-type-conversion-functions">1. Type Conversion Functions</h3>
+<p><strong>Purpose</strong>: Convert values from one type to another.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int()</code></td>
+<td>Converts a value to an integer.</td>
+<td><code>int('5')</code></td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td><code>float()</code></td>
+<td>Converts a value to a floating-point number.</td>
+<td><code>float('3.14')</code></td>
+<td><code>3.14</code></td>
+</tr>
+<tr>
+<td><code>complex()</code></td>
+<td>Converts a value to a complex number.</td>
+<td><code>complex(2, 3)</code></td>
+<td><code>(2+3j)</code></td>
+</tr>
+<tr>
+<td><code>str()</code></td>
+<td>Converts a value to a string.</td>
+<td><code>str(123)</code></td>
+<td><code>'123'</code></td>
+</tr>
+<tr>
+<td><code>repr()</code></td>
+<td>Returns a string representation of an object.</td>
+<td><code>repr([1, 2, 3])</code></td>
+<td><code>'[1, 2, 3]'</code></td>
+</tr>
+<tr>
+<td><code>bool()</code></td>
+<td>Converts a value to a boolean.</td>
+<td><code>bool(1)</code></td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>list()</code></td>
+<td>Converts a value to a list.</td>
+<td><code>list('abc')</code></td>
+<td><code>['a', 'b', 'c']</code></td>
+</tr>
+<tr>
+<td><code>dict()</code></td>
+<td>Converts a value to a dictionary.</td>
+<td><code>dict(a=1, b=2)</code></td>
+<td><code>{'a': 1, 'b': 2}</code></td>
+</tr>
+<tr>
+<td><code>set()</code></td>
+<td>Converts a value to a set.</td>
+<td><code>set([1, 2, 3])</code></td>
+<td><code>{1, 2, 3}</code></td>
+</tr>
+<tr>
+<td><code>tuple()</code></td>
+<td>Converts a value to a tuple.</td>
+<td><code>tuple([1, 2, 3])</code></td>
+<td><code>(1, 2, 3)</code></td>
+</tr>
+<tr>
+<td><code>frozenset()</code></td>
+<td>Converts a value to a frozenset.</td>
+<td><code>frozenset([1, 2, 3])</code></td>
+<td><code>frozenset({1, 2, 3})</code></td>
+</tr>
+<tr>
+<td><code>chr()</code></td>
+<td>Converts an integer to a Unicode character.</td>
+<td><code>chr(65)</code></td>
+<td><code>'A'</code></td>
+</tr>
+<tr>
+<td><code>ord()</code></td>
+<td>Converts a character to its Unicode code.</td>
+<td><code>ord('A')</code></td>
+<td><code>65</code></td>
+</tr>
+<tr>
+<td><code>bin()</code></td>
+<td>Converts an integer to a binary string.</td>
+<td><code>bin(10)</code></td>
+<td><code>'0b1010'</code></td>
+</tr>
+<tr>
+<td><code>oct()</code></td>
+<td>Converts an integer to an octal string.</td>
+<td><code>oct(10)</code></td>
+<td><code>'0o12'</code></td>
+</tr>
+<tr>
+<td><code>hex()</code></td>
+<td>Converts an integer to a hexadecimal string.</td>
+<td><code>hex(10)</code></td>
+<td><code>'0xa'</code></td>
+</tr>
+<tr>
+<td><code>bytes()</code></td>
+<td>Converts a value to a bytes object.</td>
+<td><code>bytes('abc', 'utf-8')</code></td>
+<td><code>b'abc'</code></td>
+</tr>
+<tr>
+<td><code>bytearray()</code></td>
+<td>Converts a value to a bytearray object.</td>
+<td><code>bytearray('abc', 'utf-8')</code></td>
+<td><code>bytearray(b'abc')</code></td>
+</tr>
+<tr>
+<td><code>memoryview()</code></td>
+<td>Creates a memory view object from a bytes-like object.</td>
+<td><code>memoryview(b'abc')</code></td>
+<td><code>&lt;memoryview&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-sequence-and-collection-manipulation-functions">2. Sequence and Collection Manipulation Functions</h3>
+<p><strong>Purpose</strong>: Perform operations on sequences (lists, tuples, strings) and collections (sets, dictionaries).</p>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>len()</code></td>
+<td>Returns the length of an object.</td>
+<td><code>len([1, 2, 3])</code></td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td><code>min()</code></td>
+<td>Returns the smallest item in an iterable.</td>
+<td><code>min([1, 2, 3])</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>max()</code></td>
+<td>Returns the largest item in an iterable.</td>
+<td><code>max([1, 2, 3])</code></td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td><code>sum()</code></td>
+<td>Returns the sum of all items in an iterable.</td>
+<td><code>sum([1, 2, 3])</code></td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td><code>sorted()</code></td>
+<td>Returns a sorted list from an iterable.</td>
+<td><code>sorted([3, 1, 2])</code></td>
+<td><code>[1, 2, 3]</code></td>
+</tr>
+<tr>
+<td><code>reversed()</code></td>
+<td>Returns a reversed iterator for a sequence.</td>
+<td><code>reversed([1, 2, 3])</code></td>
+<td><code>&lt;reversed object&gt;</code></td>
+</tr>
+<tr>
+<td><code>enumerate()</code></td>
+<td>Returns an enumerate object, yielding pairs of index and value.</td>
+<td><code>enumerate(['a', 'b'])</code></td>
+<td><code>[(0, 'a'), (1, 'b')]</code></td>
+</tr>
+<tr>
+<td><code>zip()</code></td>
+<td>Returns an iterator aggregating elements from iterables.</td>
+<td><code>zip([1, 2], ['a', 'b'])</code></td>
+<td><code>[(1, 'a'), (2, 'b')]</code></td>
+</tr>
+<tr>
+<td><code>map()</code></td>
+<td>Applies a function to all items in an iterable.</td>
+<td><code>map(str, [1, 2])</code></td>
+<td><code>['1', '2']</code></td>
+</tr>
+<tr>
+<td><code>filter()</code></td>
+<td>Filters elements in an iterable based on a function.</td>
+<td><code>filter(bool, [0, 1, 2])</code></td>
+<td><code>[1, 2]</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-mathematical-and-numeric-functions">3. Mathematical and Numeric Functions</h3>
+<p><strong>Purpose</strong>: Execute basic mathematical operations.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>abs()</code></td>
+<td>Returns the absolute value of a number.</td>
+<td><code>abs(-10)</code></td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>round()</code></td>
+<td>Rounds a floating-point number to the nearest integer.</td>
+<td><code>round(3.14159, 2)</code></td>
+<td><code>3.14</code></td>
+</tr>
+<tr>
+<td><code>divmod()</code></td>
+<td>Returns a pair of quotient and remainder.</td>
+<td><code>divmod(10, 3)</code></td>
+<td><code>(3, 1)</code></td>
+</tr>
+<tr>
+<td><code>pow()</code></td>
+<td>Returns the value of a number raised to a power.</td>
+<td><code>pow(2, 3)</code></td>
+<td><code>8</code></td>
+</tr>
+<tr>
+<td><code>sum()</code></td>
+<td>Sums items of an iterable (optional start value).</td>
+<td><code>sum([1, 2, 3])</code></td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td><code>max()</code></td>
+<td>Returns the maximum value in an iterable or arguments.</td>
+<td><code>max([1, 2, 3])</code></td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td><code>min()</code></td>
+<td>Returns the minimum value in an iterable or arguments.</td>
+<td><code>min([1, 2, 3])</code></td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-inputoutput-functions">4. Input/Output Functions</h3>
+<p><strong>Purpose</strong>: Interact with the user or manipulate files.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>print()</code></td>
+<td>Outputs a message to the console.</td>
+<td><code>print("Hello, World!")</code></td>
+<td><code>Hello, World!</code></td>
+</tr>
+<tr>
+<td><code>input()</code></td>
+<td>Reads a string from user input.</td>
+<td><code>input("Enter name: ")</code></td>
+<td>Returns user input as a string.</td>
+</tr>
+<tr>
+<td><code>open()</code></td>
+<td>Opens a file and returns a corresponding file object.</td>
+<td><code>open('file.txt', 'r')</code></td>
+<td>Opens the file for reading.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-object-manipulation-functions">5. Object Manipulation Functions</h3>
+<p><strong>Purpose</strong>: Work with objects and attributes.</p>
+<ul>
+<li><strong><code>type()</code></strong>: Returns the type of an object.</li>
+<li><strong><code>isinstance()</code></strong>: Checks if an object is an instance of a class or tuple of classes.</li>
+<li><strong><code>id()</code></strong>: Returns the unique identifier of an object.</li>
+<li><strong><code>dir()</code></strong>: Returns a list of valid attributes for an object.</li>
+<li><strong><code>vars()</code></strong>: Returns the <code>__dict__</code> attribute of an object.</li>
+<li><strong><code>hasattr()</code></strong>: Checks if an object has a specified attribute.</li>
+<li><strong><code>getattr()</code></strong>: Retrieves the value of a named attribute.</li>
+<li><strong><code>setattr()</code></strong>: Sets the value of a named attribute.</li>
+<li><strong><code>delattr()</code></strong>: Deletes a named attribute.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type()</code></td>
+<td>Returns the type of an object.</td>
+<td><code>type(123)</code></td>
+<td><code>&lt;class 'int'&gt;</code></td>
+</tr>
+<tr>
+<td><code>isinstance()</code></td>
+<td>Checks if an object is an instance of a class or tuple of classes.</td>
+<td><code>isinstance(123, int)</code></td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>id()</code></td>
+<td>Returns the unique identifier of an object.</td>
+<td><code>id(123)</code></td>
+<td>Some unique integer value</td>
+</tr>
+<tr>
+<td><code>dir()</code></td>
+<td>Returns a list of valid attributes for an object.</td>
+<td><code>dir([1, 2, 3])</code></td>
+<td>List of attributes for the list object</td>
+</tr>
+<tr>
+<td><code>vars()</code></td>
+<td>Returns the <code>__dict__</code> attribute of an object.</td>
+<td><code>vars({"key": "value"})</code></td>
+<td><code>{'key': 'value'}</code></td>
+</tr>
+<tr>
+<td><code>hasattr()</code></td>
+<td>Checks if an object has a specified attribute.</td>
+<td><code>hasattr([], 'append')</code></td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>getattr()</code></td>
+<td>Retrieves the value of a named attribute.</td>
+<td><code>getattr([], 'append')</code></td>
+<td><code>&lt;built-in method append of list object&gt;</code></td>
+</tr>
+<tr>
+<td><code>setattr()</code></td>
+<td>Sets the value of a named attribute.</td>
+<td><code>setattr([], 'new_attr', 42)</code></td>
+<td>No output, sets attribute <code>new_attr</code> to <code>42</code></td>
+</tr>
+<tr>
+<td><code>delattr()</code></td>
+<td>Deletes a named attribute.</td>
+<td><code>class Test: pass; t = Test(); setattr(t, 'attr', 1); delattr(t, 'attr')</code></td>
+<td>No output, deletes attribute <code>attr</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-memory-and-system-manipulation-functions">6. Memory and System Manipulation Functions</h3>
+<p><strong>Purpose</strong>: Work with memory and low-level system aspects.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>memoryview()</code></td>
+<td>Returns a memory view object.</td>
+<td><code>mv = memoryview(b'hello'); mv[0]</code></td>
+<td><code>104</code> (the ASCII value of 'h')</td>
+</tr>
+<tr>
+<td><code>hash()</code></td>
+<td>Returns the hash value of an object.</td>
+<td><code>hash("hello")</code></td>
+<td>A unique integer value (e.g., <code>-1017891587</code>)</td>
+</tr>
+<tr>
+<td><code>object()</code></td>
+<td>Returns a new featureless object.</td>
+<td><code>obj = object()</code></td>
+<td>A new object with no specific attributes</td>
+</tr>
+<tr>
+<td><code>del()</code></td>
+<td>Deletes an object.</td>
+<td><code>x = 10; del x</code></td>
+<td>No output, deletes variable <code>x</code></td>
+</tr>
+<tr>
+<td><code>delattr()</code></td>
+<td>Deletes an attribute from an object.</td>
+<td><code>class Test: pass; t = Test(); setattr(t, 'attr', 1); delattr(t, 'attr')</code></td>
+<td>No output, deletes attribute <code>attr</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-miscellaneous-functions">7. Miscellaneous Functions</h3>
+<p><strong>Purpose</strong>: Functions that don't fit neatly into other categories.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>help()</code></td>
+<td>Invokes the built-in help system.</td>
+<td><code>help(str)</code></td>
+<td>Displays help information about the <code>str</code> class</td>
+</tr>
+<tr>
+<td><code>globals()</code></td>
+<td>Returns a dictionary representing the current global symbol table.</td>
+<td><code>globals()</code></td>
+<td>A dictionary of global variables and their values</td>
+</tr>
+<tr>
+<td><code>locals()</code></td>
+<td>Returns a dictionary representing the current local symbol table.</td>
+<td><code>locals()</code></td>
+<td>A dictionary of local variables and their values</td>
+</tr>
+<tr>
+<td><code>eval()</code></td>
+<td>Evaluates a Python expression from a string-based input.</td>
+<td><code>eval('2 + 3')</code></td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td><code>exec()</code></td>
+<td>Executes Python code dynamically from a string or compiled code.</td>
+<td><code>exec('x = 5')</code></td>
+<td>No output; creates variable <code>x</code> with value <code>5</code></td>
+</tr>
+<tr>
+<td><code>compile()</code></td>
+<td>Compiles a source into a code or AST object.</td>
+<td><code>code = compile('print("Hello")', '&lt;string&gt;', 'exec'); exec(code)</code></td>
+<td><code>Hello</code></td>
+</tr>
+<tr>
+<td><code>super()</code></td>
+<td>Returns a proxy object that delegates method calls to a parent or sibling class.</td>
+<td><code>class Parent: pass; class Child(Parent): pass; super(Child, Child())</code></td>
+<td><code>&lt;super object&gt;</code></td>
+</tr>
+<tr>
+<td><code>staticmethod()</code></td>
+<td>Returns a static method for a function.</td>
+<td><code>class MyClass: @staticmethod def my_method(): pass</code></td>
+<td>No output; creates a static method in <code>MyClass</code></td>
+</tr>
+<tr>
+<td><code>classmethod()</code></td>
+<td>Returns a class method for a function.</td>
+<td><code>class MyClass: @classmethod def my_method(cls): pass</code></td>
+<td>No output; creates a class method in <code>MyClass</code></td>
+</tr>
+<tr>
+<td><code>property()</code></td>
+<td>Returns a property attribute for a class.</td>
+<td><code>class MyClass: def my_property(self): return 42; my_property = property(my_property)</code></td>
+<td>A property that returns <code>42</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="8-exception-handling-functions">8. Exception Handling Functions</h3>
+<p><strong>Purpose</strong>: Handle exceptions and errors.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Function/Class</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>issubclass()</code></td>
+<td>Checks if a class is a subclass of another class.</td>
+<td><code>issubclass(bool, int)</code></td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>BaseException</code></td>
+<td>The base class for all built-in exceptions.</td>
+<td><code>BaseException</code></td>
+<td><code>&lt;class 'BaseException'&gt;</code></td>
+</tr>
+<tr>
+<td><code>Exception</code></td>
+<td>The base class for most built-in exceptions.</td>
+<td><code>Exception</code></td>
+<td><code>&lt;class 'Exception'&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="9-memory-and-system-manipulation-functions">9. Memory and System Manipulation Functions</h3>
+<p><strong>Purpose</strong>: Work with memory and system aspects.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>memoryview()</code></td>
+<td>Returns a memory view object.</td>
+<td><code>mv = memoryview(b'hello'); mv[0]</code></td>
+<td><code>104</code> (the ASCII value of 'h')</td>
+</tr>
+<tr>
+<td><code>hash()</code></td>
+<td>Returns the hash value of an object.</td>
+<td><code>hash("hello")</code></td>
+<td>A unique integer value (e.g., <code>-1017891587</code>)</td>
+</tr>
+<tr>
+<td><code>object()</code></td>
+<td>Returns a new featureless object.</td>
+<td><code>obj = object()</code></td>
+<td>A new object with no specific attributes</td>
+</tr>
+<tr>
+<td><code>del()</code></td>
+<td>Deletes an object.</td>
+<td><code>x = 10; del x</code></td>
+<td>No output, deletes variable <code>x</code></td>
+</tr>
+<tr>
+<td><code>delattr()</code></td>
+<td>Deletes an attribute from an object.</td>
+<td><code>class Test: pass; t = Test(); setattr(t, 'attr', 1); delattr(t, 'attr')</code></td>
+<td>No output, deletes attribute <code>attr</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-inputoutput-functions">10. Input/Output Functions</h3>
+<p><strong>Purpose</strong>: Interact with the user or manipulate files.</p>
+<ul>
+<li><strong><code>print()</code></strong>: Outputs a message to the console.</li>
+<li><strong><code>input()</code></strong>: Reads a string from user input.</li>
+<li><strong><code>open()</code></strong>: Opens a file and returns a corresponding file object.</li>
+</ul>
+<hr />
+<h3 id="conclusion">Conclusion</h3>
+<p>Mastering Python's built-in functions is a critical step in becoming a proficient Python developer. These functions provide the building blocks for creating efficient, readable, and maintainable code. By leveraging these functions, developers can save time, reduce errors, and produce higher-quality software.</p>
+<h2 id="author">Author</h2>
+<p>Miguel Angelo Do Amaral Junior</p></p>
+    </article>
+</section>
+            <!-- endblock -->
+
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
+    </div>
+</footer>
+            <!-- endblock -->
+        </div>
+
+    </main>
+
+        <script>var base_url = '../../..';</script>
+        <script src="../../../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../assets/js/mkdocs.js"></script>
+			<script src="../../../js/custom.js" defer></script>
+			<script src="https://www.googletagmanager.com/gtag/js?id=G-MV51GYN8DB" defer></script>
+			<script src="../../../js/analytics.js" defer></script>
+			<script src="../../../js/inject_search.js" defer></script>
+			<script src="../../../js/inject_adsense.js" defer></script>
+			<script src="../../../search/main.js" defer></script>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
+
+</html>

@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>02 - ETL vs ELT - part 1 - Miguel Angelo Do Amaral<br>
+<hr class="custom-hr">
+<span style="color: #8be9fd;">Data Engineer</span><br>
+<span style="color: #50fa7b;">&</span><br>
+<span style="color: #ffb86c;">Python Dev</span><br><br>
+<a href="https://amaralapps.com" target="_blank">🚀<span style="color:rgb(250,100,100);">www.amaralapps.com</span>🚀</a>
+</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <link rel="canonical" href="https://miguelzeph.github.io/concepts/data_engineering/02_ETL_vs_ELT_part1/">
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../assets/css/darcula-highlight.min.css">
+
+        <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../../../assets/css/mkdocs.min.css">
+            <link href="../../../css/custom.css" rel="stylesheet">
+
+        
+            <link  rel="icon" type="image/x-icon" href="../../../img/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+
+ <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+
+    <div class="p-4">
+        
+            <img class="logo" src="../../../about/img/profile.png" height="150px">
+        
+
+        <div class="drac-text-center">
+            
+                <span class="drac-text drac-line-height drac-text-white">Miguel Angelo Do Amaral<br>
+<hr class="custom-hr">
+<span style="color: #8be9fd;">Data Engineer</span><br>
+<span style="color: #50fa7b;">&</span><br>
+<span style="color: #ffb86c;">Python Dev</span><br><br>
+<a href="https://amaralapps.com" target="_blank">🚀<span style="color:rgb(250,100,100);">www.amaralapps.com</span>🚀</a>
+</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Home
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../about/about/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    👤 About Me
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../skills/skills/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    📚 Skills
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class=" active 
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📘-important-concepts-collapse" aria-expanded="false">
+                    📘 Important Concepts
+                </a>
+                <div class="collapse" id="📘-important-concepts-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#👷-data-engineering-collapse" aria-expanded="false">
+            👷 Data Engineering
+        </a>
+
+        <div class="collapse" id="👷-data-engineering-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../01_introduction_data_engineering/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - DE Introduction
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="./"
+            class=" active 
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - ETL vs ELT - part 1
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../02_ETL_vs_ELT_part2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - ETL vs ELT - part 2
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../03_warehouse_database_datalake/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Data Warehouse vs Database vs Datalake
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../04_scalability/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Scalability
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#💾-data-basics-collapse" aria-expanded="false">
+            💾 Data Basics
+        </a>
+
+        <div class="collapse" id="💾-data-basics-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/01_data_modeling/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Data Modeling
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/02_data_structures/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Data Structures
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/03_data_types/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Data Types
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/04_data_structured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Data Structured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/05_data_semi_structured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Data Semi-Structured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/06_data_unstructured/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            06 - Data Unstructured
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../data/07_data_blending/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            07 - Data Blending
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🌐-api-collapse" aria-expanded="false">
+            🌐 API
+        </a>
+
+        <div class="collapse" id="🌐-api-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../api/01_api_basic/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - API base
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../api/02_api_rest_graphql/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - REST API vs GraphQL API
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../api/03_api_tips_performance/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - API Performance
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📑-documentation-collapse" aria-expanded="false">
+                    📑 Documentation
+                </a>
+                <div class="collapse" id="📑-documentation-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐍-python-collapse" aria-expanded="false">
+            🐍 Python
+        </a>
+
+        <div class="collapse" id="🐍-python-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/python/01_python_good_starting/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Python Good Starting
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/python/02_python_organize_modules/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Organazing into Modules
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/python/03_configuration_management/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Configuration Management
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/python/04_typing_docstring/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - Typing & Docstring
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/python/05_built-in_functions/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Built-in functions
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/python/06_built-in_methods/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            06 - Built-in methods
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐙-version-control-collapse" aria-expanded="false">
+            🐙 Version Control
+        </a>
+
+        <div class="collapse" id="🐙-version-control-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/version_control/01_gitflow/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - GitFlow
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/version_control/02_commands/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - Day-to-day commands
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#💻-aws-collapse" aria-expanded="false">
+            💻 AWS
+        </a>
+
+        <div class="collapse" id="💻-aws-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/aws/01_deploy_docker_AWS_EC2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - EC2 Instance - Deploying Docker
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/aws/02_AWS_EC2_domain_http/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - EC2 App - Custom Domain HTTP
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/aws/03_AWS_EC2_domain_https/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - EC2 App - Custom Domain HTTPS
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/aws/04_AWS_EC2_domain_https_streamlit/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04 - EC2 App - (STREAMLIT) Custom Domain HTTPS
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/aws/05_AWS_workmail_SES/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05 - Workmail & SES
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#🐳-docker-collapse" aria-expanded="false">
+            🐳 Docker
+        </a>
+
+        <div class="collapse" id="🐳-docker-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/docker/01_docker/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Docker Base
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/docker/02_dockerfile/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            02 - DockerFile Guide
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/docker/03_docker_restart_env_completely/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            03 - Restarting Env Completely
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#📩-kafka-collapse" aria-expanded="false">
+            📩 Kafka
+        </a>
+
+        <div class="collapse" id="📩-kafka-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../documentation/kafka/01_kafka_introduction/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - Introduction
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#💼-projects-collapse" aria-expanded="false">
+                    💼 Projects
+                </a>
+                <div class="collapse" id="💼-projects-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/end-to-end-pipeline-etl/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            End-to-end Pipeline ETL
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/covid_dashboard/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            COVID-19 Data Dashboard
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/amaralapps_webpage/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            AmaralApps Webpage
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/codename/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Codename
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/minute_news/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Minute News
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/data_queue_keeper/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Data Queue Keeper
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/train_your_classifier/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Train Your Classifier
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/airflow_guide/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Airflow Guide
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../projects/document_library/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Doc Lib
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#📊-data-career-guide-collapse" aria-expanded="false">
+                    📊 Data Career Guide
+                </a>
+                <div class="collapse" id="📊-data-career-guide-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../data_career_guide/01_Introduction_data_career/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            01 - introduction Data Career
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../../services/services/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    🛠️ Services
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../scientific_articles/scientific_articles/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    🔬 Scientific Articles
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../contact/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    📞 Contact
+                </a>
+            </li>
+        </ul>
+        <!-- endblock -->
+    </div>
+</nav>
+        <!-- endblock -->
+
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href="../01_introduction_data_engineering/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../02_ETL_vs_ELT_part2/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                            
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="2-etl-vs-elt-understanding-data-integration-processes-parte-1">2. ETL vs. ELT: Understanding Data Integration Processes - parte 1</h1>
+<p>Data integration is crucial in modern data management, especially in big data environments. Two common processes used for data integration are <strong>ETL (Extract, Transform, Load)</strong> and <strong>ELT (Extract, Load, Transform)</strong>. While they share similar steps, they differ in the sequence and environment in which data transformations are applied.</p>
+<h2 id="1-what-are-etl-and-elt">1. What are ETL and ELT?</h2>
+<h3 id="etl-extract-transform-load">ETL (Extract, Transform, Load)</h3>
+<p>ETL is a process where data is extracted from source systems, transformed to fit business needs (<code>processed data</code>), and then loaded into a destination, usually a <code>database</code>.</p>
+<ol>
+<li><strong>Extract</strong>: Data is extracted from <code>various sources</code>, such as <strong>databases, APIs, Webscraping</strong> or <strong>files</strong>.</li>
+<li><strong>Transform</strong>: Extracted data is transformed to meet business rules and formatting requirements. This may include data cleaning, aggregation, or enrichment.</li>
+<li><strong>Load</strong>: Transformed data is loaded into the target system, typically a data warehouse or database, ready for analysis.</li>
+</ol>
+<p><strong>Advantages of ETL:</strong></p>
+<ul>
+<li>Ensures data is clean and conforms to business requirements before loading, facilitating consistent and accurate analysis.</li>
+<li>Ideal for databases with lower <code>processing capacity</code>, as transformations occur <code>outside</code> the destination database, reducing processing load on the target system.</li>
+</ul>
+<p><strong>Disadvantages of ETL:</strong></p>
+<ul>
+<li>The transformation process can be slow with large data volumes since it occurs before loading.</li>
+<li>Less flexibility for ad-hoc analysis, as data is pre-processed and transformed.</li>
+</ul>
+<h3 id="elt-extract-load-transform">ELT (Extract, Load, Transform)</h3>
+<p>ELT is a process that loads <code>raw data</code> directly into the target system, often a data lake or a cloud <code>data warehouse</code>, and then applies <code>transformations within</code> as needed. This approach leverages the processing power of modern data warehouses to perform transformations after loading.</p>
+<ol>
+<li><strong>Extract</strong>: Data is extracted from source systems, similar to ETL.</li>
+<li><strong>Load</strong>: Data is loaded in its raw form into the destination, such as a data lake or cloud data warehouse.</li>
+<li><strong>Transform</strong>: After loading, transformations are applied within the data warehouse, using its processing capabilities to clean and format the data.</li>
+</ol>
+<p><strong>Advantages of ELT:</strong></p>
+<ul>
+<li>Takes advantage of the scalability and processing power of cloud-based systems, allowing for rapid loading of large datasets.</li>
+<li>More suitable for ad-hoc analysis and big data environments, as raw data is available for various types of processing.</li>
+</ul>
+<p><strong>Disadvantages of ELT:</strong></p>
+<ul>
+<li>Requires more processing capacity and a robust data warehouse, which may increase costs.</li>
+<li>Raw data can consume more storage and may lead to processing delays if transformations are complex.</li>
+</ul>
+<h2 id="2-key-differences-between-etl-and-elt">2. Key Differences Between ETL and ELT</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>ETL</th>
+<th>ELT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transformation</strong></td>
+<td>Occurs before loading; suited for customized and complex transformations.</td>
+<td>Occurs after loading; takes advantage of cloud processing.</td>
+</tr>
+<tr>
+<td><strong>Processing</strong></td>
+<td>External processing server</td>
+<td>In-database processing</td>
+</tr>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>Traditional data warehouses</td>
+<td>Cloud data lakes/warehouses</td>
+</tr>
+<tr>
+<td><strong>Data Volume</strong></td>
+<td>Smaller datasets</td>
+<td>Large, complex datasets</td>
+</tr>
+<tr>
+<td><strong>Flexibility</strong></td>
+<td>Less flexible</td>
+<td>High flexibility for ad-hoc analysis</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-pros-and-cons-of-etl-and-elt">3. Pros and Cons of ETL and ELT</h2>
+<table>
+<thead>
+<tr>
+<th>Process</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ETL</strong></td>
+<td>- Ensures data is transformed before loading, guaranteeing quality and consistency.</td>
+<td>- Slower processing time with large datasets due to pre-loading transformations.</td>
+</tr>
+<tr>
+<td></td>
+<td>- Ideal for systems with limited processing capabilities, as transformations occur externally.</td>
+<td>- Less flexible for ad-hoc analysis as data is pre-processed.</td>
+</tr>
+<tr>
+<td></td>
+<td>- Reduces storage and processing demands on the database.</td>
+<td>- Higher maintenance complexity due to transformation pipelines.</td>
+</tr>
+<tr>
+<td><strong>ELT</strong></td>
+<td>- Enables rapid loading of raw data, allowing quick access to large datasets.</td>
+<td>- Requires significant storage, as raw data can be voluminous.</td>
+</tr>
+<tr>
+<td></td>
+<td>- Utilizes cloud-based data warehouses for scalable transformations.</td>
+<td>- Transformation delays can occur with complex operations.</td>
+</tr>
+<tr>
+<td></td>
+<td>- Suitable for big data environments and flexible for exploratory data processing.</td>
+<td>- Requires robust cloud resources, potentially increasing costs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-criteria-based-comparison">4. Criteria-Based Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>ETL</th>
+<th>ELT</th>
+<th>Winner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Staffing Needs</strong></td>
+<td>Requires more specialized staff, particularly data engineers.</td>
+<td>Fewer staff needed due to automation within modern data warehouses.</td>
+<td><strong>ELT</strong></td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>Lower initial costs, especially for small-scale or on-premises setups, but higher maintenance costs.</td>
+<td>Higher initial costs, but more cost-effective at scale.</td>
+<td><strong>Depends</strong> (ETL for small scale; ELT for large scale)</td>
+</tr>
+<tr>
+<td><strong>Processing Memory</strong></td>
+<td>Lower demand, as transformations occur outside the final system.</td>
+<td>High demand, as processing occurs directly within the data warehouse.</td>
+<td><strong>ELT</strong></td>
+</tr>
+<tr>
+<td><strong>Storage Requirements</strong></td>
+<td>Less storage needed due to pre-processing.</td>
+<td>More storage required for raw data.</td>
+<td><strong>ETL</strong></td>
+</tr>
+<tr>
+<td><strong>Best for Small Businesses</strong></td>
+<td>More suitable due to lower initial costs and on-premises compatibility.</td>
+<td>Less suitable due to initial cloud infrastructure costs.</td>
+<td><strong>ETL</strong></td>
+</tr>
+<tr>
+<td><strong>Best for Large Businesses</strong></td>
+<td>May not scale well for large data volumes.</td>
+<td>Highly scalable for big data environments.</td>
+<td><strong>ELT</strong></td>
+</tr>
+<tr>
+<td><strong>Ease of Maintenance</strong></td>
+<td>More complex due to external transformation.</td>
+<td>Lower maintenance due to automation.</td>
+<td><strong>ELT</strong></td>
+</tr>
+<tr>
+<td><strong>Overall Ease</strong></td>
+<td>More initial setup and infrastructure management.</td>
+<td>Simpler with cloud automation and scalability.</td>
+<td><strong>ELT</strong></td>
+</tr>
+<tr>
+<td><strong>Better for Future, Unexpected Analysis</strong></td>
+<td>Less flexible for unforeseen analyses.</td>
+<td>More flexible, as raw data remains for various analyses.</td>
+<td><strong>ELT</strong></td>
+</tr>
+<tr>
+<td><strong>Community Support</strong></td>
+<td>Strong community support with established tools.</td>
+<td>Growing community with focus on cloud solutions.</td>
+<td><strong>Tie</strong> (ETL has tradition; ELT has innovation)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-choosing-between-etl-and-elt">5. Choosing Between ETL and ELT</h2>
+<p>When deciding between ETL and ELT, consider the following:</p>
+<ul>
+<li><strong>Data Volume</strong>: ELT is preferable for large datasets that require cloud scalability.</li>
+<li><strong>Transformation Needs</strong>: ETL is ideal when complex data transformations are necessary before analysis.</li>
+<li><strong>Infrastructure</strong>: ETL suits on-premises setups, whereas ELT leverages cloud computing.</li>
+<li><strong>Budget</strong>: While ETL is often more cost-effective for smaller projects, ELT can provide greater flexibility and scalability over time.</li>
+</ul>
+<h2 id="6-python-tooling-for-etl-and-elt-projects">6. Python Tooling for ETL and ELT Projects</h2>
+<h3 id="etl-tools">ETL Tools</h3>
+<p>In an ETL project, transformations occur before data reaches the destination. Common tools include:</p>
+<ul>
+<li><strong>Python</strong>: General-purpose scripting.</li>
+<li><strong>Pandas</strong>: Data manipulation.</li>
+<li><strong>SQLAlchemy</strong>: Database interaction.</li>
+<li><strong>Airflow</strong>: Pipeline orchestration and scheduling.</li>
+</ul>
+<h3 id="elt-tools">ELT Tools</h3>
+<p>In an ELT project, data is loaded first, and transformations happen within the destination, leveraging cloud power:</p>
+<ul>
+<li><strong>Snowflake/BigQuery</strong>: Cloud data warehouses.</li>
+<li><strong>DBT (Data Build Tool)</strong>: Transformation in the warehouse.</li>
+<li><strong>Airflow or Prefect</strong>: ELT pipeline orchestration.</li>
+</ul>
+<h2 id="7-summary-of-etl-vs-elt">7. Summary of ETL vs ELT</h2>
+<ul>
+<li><strong>ETL</strong>: Commonly used with traditional databases where transformations occur before the final load. </li>
+<li><strong>ELT</strong>: Suited for modern data warehouses, allowing in-database transformations for scalability and flexibility.</li>
+</ul>
+<p>Both ETL and ELT are essential in different scenarios. While ETL offers control and is suitable for structured data, ELT thrives in cloud environments with scalability and flexibility for various data types.</p></p>
+    </article>
+</section>
+            <!-- endblock -->
+
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
+    </div>
+</footer>
+            <!-- endblock -->
+        </div>
+
+    </main>
+
+        <script>var base_url = '../../..';</script>
+        <script src="../../../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../assets/js/mkdocs.js"></script>
+			<script src="../../../js/custom.js" defer></script>
+			<script src="https://www.googletagmanager.com/gtag/js?id=G-MV51GYN8DB" defer></script>
+			<script src="../../../js/analytics.js" defer></script>
+			<script src="../../../js/inject_search.js" defer></script>
+			<script src="../../../js/inject_adsense.js" defer></script>
+			<script src="../../../search/main.js" defer></script>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
+
+</html>

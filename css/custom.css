@@ -1,0 +1,222 @@
+/* --------------------------- Content --------------------------------- */
+.content {
+    background-color: #282a36; /* Fundo escuro mais uniforme no tema Dracula */
+    padding: 1em;
+    border-left: 4px solid #50fa7b; /* Verde suave para contraste */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+    border-radius: 8px;
+}
+
+/* ------------------- FONT CUSTOM SIZE --------------------- */
+
+/* Fontes dos Títulos */
+h1 {
+    font-size: 2.2em; /* Tamanho do h1 mais destacado */
+    color: #ff79c6;
+    text-align: center; /* Centraliza o h1 para mais ênfase */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para destaque */
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.8em; /* Tamanho de h2 ajustado */
+    color: #8be9fd;
+    text-align: left;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Leve sombra */
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.6em;
+    color: #bd93f9;
+    text-align: left;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: bold; /* Destaque adicional */
+    margin-bottom: 0.8em;
+}
+
+h4 {
+    font-size: 1.4em;
+    color: #ffb86c; /* Laranja suave */
+    text-align: left;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-style: italic; /* Variedade com itálico */
+    margin-bottom: 0.7em;
+}
+
+h5 {
+    font-size: 1.3em;
+    color: #8be9fd; /* Azul claro */
+    text-align: left;
+    font-weight: normal; /* Um pouco mais sutil */
+    margin-bottom: 0.6em;
+}
+
+h6 {
+    font-size: 1.1em;
+    color: #50fa7b; /* Verde suave */
+    text-align: left;
+    text-transform: uppercase; /* Diferenciação com caixa alta */
+    letter-spacing: 1px; /* Espaçamento para legibilidade */
+    margin-bottom: 0.5em;
+}
+
+/* Fonte do Corpo de Texto */
+body {
+    font-size: 17px; /* Fonte um pouco maior para legibilidade */
+    color: #f8f8f2;
+    line-height: 1.6; /* Espaçamento entre linhas para conforto de leitura */
+}
+
+p {
+    margin-bottom: 2em; /* Espaçamento entre parágrafos */
+    color: #f1f1eee3; /* Cor consistente */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    font-size: 17px; /* Tamanho maior para legibilidade */
+}
+
+a {
+    font-size: 14px; /* Ajuste leve */
+    color: #50fa7b; /* Verde característico */
+    font-weight: bold; /* Tornar mais chamativo */
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+a:hover {
+    color: #ffb86c; /* Destaque em laranja */
+    border-bottom: 3px solid #ffb86c; /* Linhas mais fortes no hover */
+}
+
+ul, ol {
+    font-size: 18px; /* Maior fonte para listas */
+    margin-bottom: 1em; /* Espaço entre listas */
+    line-height: 1.8; /* Mais espaçamento entre os itens */
+    color: #f1f1eee3;
+    padding-left: 1.5em; /* Indentação para melhor organização visual */
+}
+
+
+
+/* ----------------------- CARD IMAGES ---------------------------- */
+.card {
+    background-color: #44475a;
+    border: 1px solid #6272a4;
+    border-radius: 8px;
+    color: #f8f8f2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito de elevação */
+    padding-top: 1rem;
+    margin-bottom: 1.5em; /* Espaço entre cards */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Sombra para profundidade */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    max-height: 150px; 
+    object-fit: contain; 
+    border-bottom: 1px solid #6272a4; /* Linha de separação da imagem */
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    color: #f8f8f2;
+    font-size: 1.4em;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.card-text {
+    color: #f8f8f2;
+    font-size: 1em;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+/* -------------------- Details & Summary (toggle) ---------------------- */
+details {
+    margin-bottom: 1em;
+    overflow: hidden; 
+    background-color: #44475a;
+    border-radius: 6px;
+    padding: 0.5em;
+    border: 1px solid #6272a4;
+    transition: background-color 0.3s ease;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.5em;
+    background-color: #6272a4;
+    color: #f8f8f2;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+summary:hover {
+    background-color: #50fa7b;
+    color: #282a36;
+}
+/* -------------------- Scientific Articles List -------------------------*/
+.article_li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #f8f8f2;
+    font-size: 1em;
+    padding: 0.5em 0.8em;
+    background-color: #44475a;
+    border-radius: 6px;
+    border-left: 3px solid #bd93f9;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.article_li:hover {
+    background-color: #6272a4;
+    border-left: 3px solid #50fa7b;
+}
+
+
+/* ------------------------- Table Styles ---------------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #44475a; /* Fundo de tabela */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5em;
+}
+
+th, td {
+    padding: 0.8em;
+    text-align: left;
+    border: 1px solid #6272a4; /* Bordas de células */
+    color: #f8f8f2; /* Cor de texto */
+}
+
+th {
+    background-color: #6272a4; /* Fundo de cabeçalhos */
+    color: #f8f8f2; /* Cor do texto do cabeçalho */
+    text-transform: uppercase;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #282a36; /* Fundo alternado para linhas pares */
+}
+
+tr:hover {
+    background-color: #50fa7a3f; /* Fundo de destaque ao hover */
+    color: #282a36; /* Cor de texto ao hover */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ------------------------- End of Table Styles --------------------- */
