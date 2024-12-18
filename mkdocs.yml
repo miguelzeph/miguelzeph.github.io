@@ -63,6 +63,7 @@ nav:
       - "🐳 Docker":
           - "01 - Docker Base": documentation/docker/01_docker.md
           - "02 - DockerFile Guide": documentation/docker/02_dockerfile.md
+          - "03 - Restarting Env Completely": documentation/docker/03_docker_restart_env_completely.md
       - "📩 Kafka":
           - "01 - Introduction": documentation/kafka/01_kafka_introduction.md
 
