@@ -68,6 +68,7 @@ nav:
           - "01 - Introduction": documentation/kafka/01_kafka_introduction.md
 
   - "💼 Projects":
+      - "Yara, Demon Hunter": projects/yara_demon_hunter.md
       - "End-to-end Pipeline ETL": projects/end-to-end-pipeline-etl.md
       - "COVID-19 Data Dashboard": projects/covid_dashboard.md
       - "AmaralApps Webpage": projects/amaralapps_webpage.md
