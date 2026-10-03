@@ -2,3 +2,11 @@
 # Which we don't need that since we are using the 
 # branch gh-pages to keep our pages.
 site/
+
+# Virtual Env
+.venv
+venv
+
+# Environment Variables
+env
+.env
